@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="gijangBicycleRental:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/gijangBicycleRental_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="gijangBicycleRental/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="gijangBicycleRental" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
