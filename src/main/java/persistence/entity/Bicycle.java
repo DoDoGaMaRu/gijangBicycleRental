@@ -13,5 +13,15 @@ public class Bicycle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String state;
-    private Long stationId;
+    @OneToOne
+    @JoinColumn(name = "station_id")
+    private Station station;
+
+    public void updateState(String state) {
+        this.state = state;
+    }
+
+    public void updateStation(Station station) {
+        this.station = station;
+    }
 }
