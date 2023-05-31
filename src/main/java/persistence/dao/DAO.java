@@ -1,32 +1,32 @@
 package persistence.dao;
 
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
+import persistence.CEntityManagerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 public abstract class DAO<T> {
-    private final SqlSessionFactory sqlSessionFactory;
+    protected Object execQuery(Executable<Object> query) {
+        Object res = null;
 
-    public DAO(SqlSessionFactory sqlSessionFactory) {
-        this.sqlSessionFactory = sqlSessionFactory;
-    }
+        // set entity transaction
+        CEntityManagerFactory.initialization();
+        EntityManager em = CEntityManagerFactory.createEntityManger();
+        EntityTransaction et = em.getTransaction();
 
-    protected Object execQuery(Executable<Object> exec) {
-        Object res = new ArrayList<>();
-        SqlSession session = sqlSessionFactory.openSession();
+        // try query
         try {
-            res = exec.run(session);
-            session.commit();
+            et.begin();
+            res = query.exec(em);
+            et.commit();
         }
         catch (Exception e) {
-            session.rollback();
-            e.printStackTrace();
+            et.rollback();
         }
         finally {
-            session.close();
+            em.close();
         }
+
         return res;
     }
 }
