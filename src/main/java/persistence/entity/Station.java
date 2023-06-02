@@ -15,4 +15,10 @@ public class Station {
     private String name;
     private String coordinate;
     private String address;
+
+    public void updateStation(String name, String coordinate, String address) {
+        this.name = name;
+        this.coordinate = coordinate;
+        this.address = address;
+    }
 }

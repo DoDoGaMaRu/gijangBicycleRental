@@ -19,4 +19,9 @@ public class Rental {
     @ManyToOne
     @JoinColumn(name = "bicycle_id")
     private Bicycle bicycle;
+
+    public void updateRental(LocalDateTime endTime, Double distance) {
+        this.endTime = endTime;
+        this.distance = distance;
+    }
 }

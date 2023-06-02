@@ -2,6 +2,7 @@ package persistence.entity;
 
 import lombok.*;
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor
@@ -14,10 +15,19 @@ public class User {
     private Long serial;
     private String id;
     private String pw;
+    private LocalDate birthDate;
     private String name;
-    private Integer age;
     private String phone;
     private String email;
     private String address;
     private String parentPhone;
+
+    public void updateUser(String pw, String name, String phone, String email, String address, String parentPhone) {
+        this.pw = pw;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.parentPhone = parentPhone;
+    }
 }

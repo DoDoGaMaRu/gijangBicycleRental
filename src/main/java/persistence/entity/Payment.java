@@ -23,4 +23,8 @@ public class Payment {
     @OneToOne
     @JoinColumn(name = "rental_id")
     private Rental rental;
+
+    public void updateState(String state) {
+        this.state = state;
+    }
 }
