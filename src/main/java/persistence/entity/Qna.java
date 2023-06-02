@@ -20,4 +20,9 @@ public class Qna {
     @ManyToOne
     @JoinColumn(name = "user_serial")
     private User user;
+
+    public void updatePost(String title, String info) {
+        this.title = title;
+        this.info = info;
+    }
 }
