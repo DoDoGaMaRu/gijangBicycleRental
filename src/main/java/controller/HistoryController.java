@@ -7,7 +7,14 @@ import java.io.IOException;
 
 public class HistoryController implements Controller{
     @Override
-    public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        HttpUtil.forward(req, res, "/WEB-INF/view/history/history.jsp");
+    public void execute(String[] path, HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        if (path.length < 2) {
+            HttpUtil.forward(req, res, "/WEB-INF/view/history/history.jsp");
+        }
+        else {
+            switch (path[1]) {
+
+            }
+        }
     }
 }

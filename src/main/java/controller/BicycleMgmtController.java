@@ -5,9 +5,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class MainController implements Controller{
+public class BicycleMgmtController implements Controller {
+
     @Override
     public void execute(String[] path, HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        HttpUtil.forward(req, res, "/WEB-INF/view/main.jsp");
+        if (path.length < 1) {
+            HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleMgmt.jsp");
+        }
+
     }
 }

@@ -19,7 +19,6 @@ public abstract class DAO<T, K> {
         Object res = null;
 
         // set entity transaction
-        CEntityManagerFactory.initialization();
         EntityManager em = CEntityManagerFactory.createEntityManger();
         EntityTransaction et = em.getTransaction();
 
