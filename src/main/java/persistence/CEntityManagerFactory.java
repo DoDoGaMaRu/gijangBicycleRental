@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-// TODO rename
 public class CEntityManagerFactory {
     private static EntityManagerFactory entityManagerFactory;
 
@@ -13,6 +12,9 @@ public class CEntityManagerFactory {
     }
 
     public static EntityManager createEntityManger(){
+        if (entityManagerFactory == null) {
+            initialization();
+        }
         return entityManagerFactory.createEntityManager();
     }
 

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: DaeHwan
-  Date: 2023-05-30
-  Time: 오후 9:22
+  Date: 2023-06-02
+  Time: 오후 03:23
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,7 +11,7 @@
 <c:set var="view_path" value="${pageContext.request.contextPath}/../WEB-INF/view"/>
 <%
     request.setCharacterEncoding("UTF-8");
-    String title = "운영 관리";
+    String title = "대여소 관리";
 %>
 
 <html>
@@ -19,6 +19,7 @@
     <title><%=title%></title>
     <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
+    <link rel="stylesheet" href="${resources_path}/css/operation/station/stationMgmt.css">
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -27,8 +28,8 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="operation/bicycle.do">자전거 관리</a>
-            <a href="operation/station.do">대여소 관리</a>
+            <a href="station/regist.do">대여소 등록</a>
+            <a href="station/show.do">대여소 조회</a>
         </div>
     </div>
 </main>

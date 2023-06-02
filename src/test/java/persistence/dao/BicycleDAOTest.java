@@ -13,7 +13,7 @@ class BicycleDAOTest {
     @Test
     @Order(1)
     void create() {
-        BicycleDAO bicycleDAO = new BicycleDAO();
+        BicycleDAO bicycleDAO = BicycleDAO.getInstance();
 
         Bicycle b1 = Bicycle.builder()
                 .state("normal")
@@ -36,7 +36,7 @@ class BicycleDAOTest {
     @Test
     @Order(2)
     void findByKey() {
-        BicycleDAO bicycleDAO = new BicycleDAO();
+        BicycleDAO bicycleDAO = BicycleDAO.getInstance();
 
         Bicycle b = bicycleDAO.findByKey(2L);
 
@@ -46,7 +46,7 @@ class BicycleDAOTest {
     @Test
     @Order(3)
     void findAllByKey() {
-        BicycleDAO bicycleDAO = new BicycleDAO();
+        BicycleDAO bicycleDAO = BicycleDAO.getInstance();
 
         List<Long> keys = new ArrayList<>();
         keys.add(2L); keys.add(3L);
@@ -60,7 +60,7 @@ class BicycleDAOTest {
     @Test
     @Order(4)
     void findAllBy() {
-        BicycleDAO bicycleDAO = new BicycleDAO();
+        BicycleDAO bicycleDAO = BicycleDAO.getInstance();
 
         List<Bicycle> bicycles = bicycleDAO.findAllBy("state", "normal");
         for (Bicycle b : bicycles) {
@@ -71,7 +71,7 @@ class BicycleDAOTest {
     @Test
     @Order(5)
     void findAll() {
-        BicycleDAO bicycleDAO = new BicycleDAO();
+        BicycleDAO bicycleDAO = BicycleDAO.getInstance();
 
         List<Bicycle> bicycles = bicycleDAO.findAll();
         for (Bicycle b : bicycles) {
@@ -82,7 +82,7 @@ class BicycleDAOTest {
     @Test
     @Order(6)
     void delete() {
-        BicycleDAO bicycleDAO = new BicycleDAO();
+        BicycleDAO bicycleDAO = BicycleDAO.getInstance();
 
         Bicycle target = bicycleDAO.findByKey(1L);
         bicycleDAO.delete(target);
@@ -97,7 +97,7 @@ class BicycleDAOTest {
     @Test
     @Order(7)
     void update() {
-        BicycleDAO bicycleDAO = new BicycleDAO();
+        BicycleDAO bicycleDAO = BicycleDAO.getInstance();
 
         Bicycle target = bicycleDAO.findByKey(3L);
         target.updateState("breakdown");
