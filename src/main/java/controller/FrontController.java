@@ -1,8 +1,10 @@
 package controller;
 
-import persistence.dao.*;
-import persistence.entity.Payment;
-import persistence.entity.Qna;
+import controller.history.HistoryController;
+import controller.notice.NoticeController;
+import controller.operation.*;
+import controller.rental.RentalController;
+import controller.user.UserController;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -28,12 +30,16 @@ public class FrontController extends HttpServlet {
     public void init(ServletConfig sc) throws ServletException {
         charset = sc.getInitParameter("charset");
         list = new HashMap<String, Controller>();
-        list.put("main", new MainController());
-        list.put("history", new HistoryController());
-        list.put("notice", new NoticeController());
-        list.put("operation", new OperationController());
-        list.put("rental", new RentalController());
-        list.put("user", new UserController());
+        list.put("/main.do", new MainController());
+        list.put("/history.do", new HistoryController());
+        list.put("/notice.do", new NoticeController());
+        list.put("/operation.do", new OperationController());
+        list.put("/operation/bicycleMgmt.do", new BicycleMgmtController());
+        list.put("/operation/stationMgmt.do", new StationMgmtController());
+        list.put("/operation/stationMgmt/regist.do", new StationRegistController());
+        list.put("/operation/stationMgmt/info.do", new StationInfoController());
+        list.put("/rental.do", new RentalController());
+        list.put("/user.do", new UserController());
     }
 
 
@@ -42,11 +48,9 @@ public class FrontController extends HttpServlet {
         req.setCharacterEncoding(charset);
         String url = req.getRequestURI();
         String contextPath = req.getContextPath();
-        String[] path = url.substring(contextPath.length()).replace(".do", "").split("/");
+        String path = url.substring(contextPath.length());
 
-        Controller subController = list.get(path[1]);
-        subController.execute(Arrays.copyOfRange(path, 1, path.length), req, res);
+        Controller subController = list.get(path);
+        subController.execute(req, res);
     }
-
-
 }

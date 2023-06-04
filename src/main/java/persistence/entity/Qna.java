@@ -2,6 +2,7 @@ package persistence.entity;
 
 import lombok.*;
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
@@ -12,6 +13,7 @@ public class Qna {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private LocalDateTime regdate;
     private String title;
     private String info;
     @OneToOne
