@@ -27,8 +27,8 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="operation/bicycle.do">자전거 관리</a>
-            <a href="operation/station.do">대여소 관리</a>
+            <a href="operation/bicycleMgmt.do">자전거 관리</a>
+            <a href="operation/stationMgmt.do">대여소 관리</a>
         </div>
     </div>
 </main>
