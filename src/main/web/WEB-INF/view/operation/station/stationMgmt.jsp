@@ -28,8 +28,8 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="station/regist.do">대여소 등록</a>
-            <a href="station/show.do">대여소 조회</a>
+            <a href="stationMgmt/regist.do">대여소 등록</a>
+            <a href="stationMgmt/info.do">대여소 조회</a>
         </div>
     </div>
 </main>

@@ -19,7 +19,10 @@
     <title><%=title%></title>
     <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
-    <link rel="stylesheet" href="${resources_path}/css/operation/station/stationMgmt.css">
+    <link rel="stylesheet" href="${resources_path}/css/operation/station/stationRegist.css">
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=35cc06d0fff9be7acbcab450ef07af23"></script>
+    <script defer type="text/javascript" src="${resources_path}/js/map.js"></script>
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -28,7 +31,7 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <form action="regist/registOK.do" method="post">
+            <form action="regist.do" method="post">
                 <table>
                     <tr>
                         <th colspan="2">대여소 등록</th>
@@ -38,15 +41,25 @@
                         <td><input type="text" name="name"></td>
                     </tr>
                     <tr>
+                        <td></td>
+                        <td><div id="map"></div></td>
+                    </tr>
+                    <tr>
                         <td>대여소 위치</td>
-                        <td><input type="text" name="coordinate"></td>
+                        <td>
+                            <input id="coordinate" type="text" name="coordinate">
+                        </td>
                     </tr>
                     <tr>
                         <td>사물 주소</td>
-                        <td><input type="text" name="address"></td>
+                        <td>
+                            <input type="text" name="address">
+                        </td>
                     </tr>
                     <tr>
-                        <th colspan="2"><input type="submit" value="확인"></th>
+                        <th colspan="2">
+                            <input type="submit" value="확인">
+                        </th>
                     </tr>
                 </table>
             </form>
