@@ -33,7 +33,7 @@
                 <span class="detail">결제 금액</span>
             </div>
             <div class="results">
-                <span class="res">PAYADSF</span>
+                <span class="res">PAYNUM1</span>
                 <span class="res">23.03.01</span>
                 <span class="res">토스페이</span>
                 <span class="res">1300원</span>
