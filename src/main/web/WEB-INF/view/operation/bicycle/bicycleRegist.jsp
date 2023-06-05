@@ -47,7 +47,6 @@
                     <tr>
                         <td>
                             <input type="submit" value="확인">
-
                         </td>
                         <td>
                             <input class="button" type="button" value="취소" onclick="window.location.href='../bicycleMgmt.do'">
