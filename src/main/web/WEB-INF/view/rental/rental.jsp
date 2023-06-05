@@ -19,6 +19,7 @@
     <title><%=title%></title>
     <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
+    <link rel="stylesheet" href="${resources_path}/css/rental/rental.css">
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">

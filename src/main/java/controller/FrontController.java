@@ -3,7 +3,9 @@ package controller;
 import controller.history.HistoryController;
 import controller.notice.NoticeController;
 import controller.operation.*;
+import controller.rental.BicycleRentalController;
 import controller.rental.RentalController;
+import controller.rental.RentalStateController;
 import controller.user.UserController;
 
 import java.io.IOException;
@@ -39,6 +41,8 @@ public class FrontController extends HttpServlet {
         list.put("/operation/stationMgmt/regist.do", new StationRegistController());
         list.put("/operation/stationMgmt/info.do", new StationInfoController());
         list.put("/rental.do", new RentalController());
+        list.put("/rental/rental.do", new BicycleRentalController());
+        list.put("/rental/state.do", new RentalStateController());
         list.put("/user.do", new UserController());
     }
 
