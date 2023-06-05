@@ -44,9 +44,6 @@
                         <td> input </td>
                     </tr>
                     <tr>
-                        <td></td>
-                    </tr>
-                    <tr>
                         <td> 처리 이력</td>
                         <td> input</td>
                         <td> 좌표 </td>

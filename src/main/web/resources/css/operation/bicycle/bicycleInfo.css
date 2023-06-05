@@ -19,8 +19,12 @@ form table{
 form table th{
     max-width: 60px;
 }
+form table tr{
+    border: 100px solid white;
+}
 form table td{
     max-width: 50px;
+    height : 60px;
     border-collapse : collapse;
     text-align: center;
 }
