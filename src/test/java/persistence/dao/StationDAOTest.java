@@ -54,4 +54,11 @@ class StationDAOTest {
     @Order(7)
     void update() {
     }
+
+    @Test
+    @Order(8)
+    void count() {
+        StationDAO dao = StationDAO.getInstance();
+        System.out.println(dao.countBy("name", "기장"));
+    }
 }

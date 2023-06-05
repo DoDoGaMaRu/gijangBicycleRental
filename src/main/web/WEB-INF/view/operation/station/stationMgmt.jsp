@@ -1,4 +1,5 @@
-<%--
+<%@ page import="persistence.entity.Station" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: DaeHwan
   Date: 2023-06-02
@@ -12,6 +13,7 @@
 <%
     request.setCharacterEncoding("UTF-8");
     String title = "대여소 관리";
+    final int MAX_OF_LIST = 10;
 %>
 
 <html>
@@ -28,8 +30,54 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="stationMgmt/regist.do">대여소 등록</a>
-            <a href="stationMgmt/info.do">대여소 조회</a>
+            <div class="main_cont">
+                <div class="cont_top">
+                    <p class="cont_title">대여소 목록</p>
+                </div>
+                <div class="cont_middle">
+                    <div class="station_list">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>이름</th>
+                                <th>사물 주소</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <%
+                                List<Station> stations = (List<Station>) request.getAttribute("stations");
+                                Station s = null;
+                                String infoAtt;
+                                for (int i=0; i<MAX_OF_LIST; i++) {
+                                    if (i < stations.size()) {
+                                        s = stations.get(i);
+                                        infoAtt = "style='cursor:hand' onclick=\"location.href='stationMgmt/info.do?id="+s.getId()+"'\"";
+                                    }
+                                    else {
+                                        infoAtt = "";
+                                        s = null;
+                                    }
+                                    out.print("<tr "+infoAtt+">");
+                                    out.print("<td>"+(s==null ? "":s.getId())+"</td>");
+                                    out.print("<td>"+(s==null ? "":s.getName())+"</td>");
+                                    out.print("<td>"+(s==null ? "":s.getAddress())+"</td>");
+                                    out.print("</tr>");
+                                }
+                            %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="page_btn_wrap">
+
+                    </div>
+                </div>
+                <div class="cont_bottom">
+                    <div class="regist_btn" style='cursor:hand' onclick="location.href='stationMgmt/regist.do'">
+                        등록
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </main>
