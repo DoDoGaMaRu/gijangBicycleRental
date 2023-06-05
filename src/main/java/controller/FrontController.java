@@ -1,6 +1,8 @@
 package controller;
 
+import controller.history.BicycleStatisticsController;
 import controller.history.HistoryController;
+import controller.history.PaymentInfoController;
 import controller.notice.NoticeController;
 import controller.operation.*;
 import controller.rental.RentalController;
@@ -32,6 +34,8 @@ public class FrontController extends HttpServlet {
         list = new HashMap<String, Controller>();
         list.put("/main.do", new MainController());
         list.put("/history.do", new HistoryController());
+        list.put("/history/paymentInfo.do", new PaymentInfoController());
+        list.put("/history/bicycleStatistics.do", new BicycleStatisticsController());
         list.put("/notice.do", new NoticeController());
         list.put("/operation.do", new OperationController());
         list.put("/operation/bicycleMgmt.do", new BicycleMgmtController());
