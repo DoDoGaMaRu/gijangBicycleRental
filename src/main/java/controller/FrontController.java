@@ -2,6 +2,7 @@ package controller;
 
 import controller.history.HistoryController;
 import controller.notice.NoticeController;
+import controller.notice.NoticeViewController;
 import controller.operation.*;
 import controller.rental.RentalController;
 import controller.user.UserController;
@@ -33,6 +34,7 @@ public class FrontController extends HttpServlet {
         list.put("/main.do", new MainController());
         list.put("/history.do", new HistoryController());
         list.put("/notice.do", new NoticeController());
+        list.put("/notice/view.do", new NoticeViewController());
         list.put("/operation.do", new OperationController());
         list.put("/operation/bicycleMgmt.do", new BicycleMgmtController());
         list.put("/operation/stationMgmt.do", new StationMgmtController());
