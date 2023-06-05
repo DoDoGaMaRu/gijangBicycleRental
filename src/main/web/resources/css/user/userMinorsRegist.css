@@ -1,0 +1,16 @@
+/* Todo userMinorsRegist.css 만들기 */
+
+.cont_box table tr {
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+}
+
+@font-face {
+    font-family: "SCDream3";
+    src: url("../font/SCDream/SCDream3.otf");
+}

@@ -4,7 +4,7 @@ import controller.history.HistoryController;
 import controller.notice.NoticeController;
 import controller.operation.*;
 import controller.rental.RentalController;
-import controller.user.UserController;
+import controller.user.*;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -40,6 +40,11 @@ public class FrontController extends HttpServlet {
         list.put("/operation/stationMgmt/info.do", new StationInfoController());
         list.put("/rental.do", new RentalController());
         list.put("/user.do", new UserController());
+        list.put("/user/registMgmt.do", new UserRegistMgmtController());
+        list.put("/user/registMgmt/regist.do", new UserRegistController());
+        list.put("/user/registMgmt/minorsRegist.do", new UserMinorsRegistController());
+        list.put("/user/info.do", new UserInfoController());
+
     }
 
 

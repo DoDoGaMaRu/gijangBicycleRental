@@ -1,25 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: DaeHwan
-  Date: 2023-05-30
-  Time: 오후 9:34
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="resources_path" value="${pageContext.request.contextPath}/resources"/>
 <c:set var="view_path" value="${pageContext.request.contextPath}/../WEB-INF/view"/>
 <%
     request.setCharacterEncoding("UTF-8");
-    String title = "회원 관리";
+    String title = "회원 가입";
 %>
 
 <html>
 <head>
     <title><%=title%></title>
-    <%-- <link rel="stylesheet" href="${resources_path}/css/reset.css"> --%>
+    <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
-    <link rel="stylesheet" href="${resources_path}/css/user.css">
+    <link rel="stylesheet" href="${resources_path}/css/user/userRegistMgmt.css">
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -28,8 +21,8 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="user/registMgmt.do">회원 가입</a>
-            <a href="user/info.do">회원 정보 조회</a>
+            <a href="registMgmt/regist.do">일반 회원가입</a>
+            <a href="registMgmt/minorsRegist.do">미성년자 회원가입</a>
         </div>
     </div>
 </main>

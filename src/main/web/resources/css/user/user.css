@@ -1,0 +1,11 @@
+/* Todo user.css 만들기 */
+
+.cont_box {
+    display: block;
+    text-align: center;
+}
+
+a {
+    font-size: 30px;
+    text-decoration: none
+}
