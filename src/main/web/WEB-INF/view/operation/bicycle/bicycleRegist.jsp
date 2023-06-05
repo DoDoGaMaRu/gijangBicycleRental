@@ -37,14 +37,6 @@
                         <th colspan="2">자전거 등록</th>
                     </tr>
                     <tr>
-                        <td>자전거 id</td>
-                        <td><input type="number" name="id"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><div id="map"></div></td>
-                    </tr>
-                    <tr>
                         <td>상태</td>
                         <td>
                             <input id="state" type="text" name="state">

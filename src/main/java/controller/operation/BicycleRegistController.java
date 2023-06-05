@@ -26,8 +26,9 @@ public class BicycleRegistController implements Controller {
 
     private void registOK(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         Bicycle bicycle = Bicycle.builder()
-                .id(Long.valueOf(req.getParameter("id")))
+                //.id(Long.parseLong(req.getParameter("id")))
                 .state(req.getParameter("state"))
+                .station(null)
                 .build();
         bicycleDAO.create(bicycle);
 
