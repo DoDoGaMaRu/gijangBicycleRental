@@ -32,14 +32,30 @@
                 <span class="detail">결제 종류</span>
                 <span class="detail">결제 금액</span>
             </div>
-            <div class="results">
-                <span class="res">PAYNUM1</span>
-                <span class="res">23.03.01</span>
-                <span class="res">토스페이</span>
-                <span class="res">1300원</span>
+            <div class="payResults">
+            <%--더미데이터--%>
+                <div class="resultSet">
+                    <span class="res" id="payNum">PAYNUM1</span>
+                    <span class="res" id="payDate">23.03.17</span>
+                    <span class="res" id="payType">토스페이</span>
+                    <span class="res" id="payAmount">1300원</span>
+                </div>
+                <div class="resultSet">
+                    <span class="res">PAYNUM2</span>
+                    <span class="res">23.05.27</span>
+                    <span class="res">삼성페이</span>
+                    <span class="res">1900원</span>
+                </div>
+                <div class="resultSet">
+                    <span class="res">PAYNUM3</span>
+                    <span class="res">23.06.01</span>
+                    <span class="res">체크카드</span>
+                    <span class="res">800원</span>
+                </div>
             </div>
-            <div class="btn">
-                <button>조회</button>
+            <%-- 조회 버튼 --%>
+            <div class="btnBox">
+                <button class="inquiry_Btn">조회</button>
             </div>
         </div>
     </div>
