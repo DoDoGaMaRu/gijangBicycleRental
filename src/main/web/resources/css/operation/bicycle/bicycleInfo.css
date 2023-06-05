@@ -8,13 +8,12 @@
     padding: 20px;
     margin: 0 auto;
     width: 900px;
-    position: relative;
 }
-form table{
 
+form table{
+    position: relative;
     max-height: 450px;
     width: 900px;
-    border : 1px solid black;
     border-collapse : collapse;
 }
 form table th{
@@ -22,7 +21,6 @@ form table th{
 }
 form table td{
     max-width: 50px;
-    border : 1px solid black;
     border-collapse : collapse;
     text-align: center;
 }
@@ -32,8 +30,6 @@ form table td:nth-child(1){
 }
 .regist_but{
     position: absolute;
-    right: 0%;
-    top: 100%;
-    border : 1px solid black;
-    text-decoration: none;
+    top: 500px;
+    right: 0;
 }

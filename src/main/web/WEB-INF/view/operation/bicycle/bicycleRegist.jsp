@@ -11,7 +11,7 @@
 <c:set var="view_path" value="${pageContext.request.contextPath}/../WEB-INF/view"/>
 <%
     request.setCharacterEncoding("UTF-8");
-    String title = "대여소 등록";
+    String title = "자전거 등록";
 %>
 
 <html>
@@ -34,7 +34,13 @@
             <form action="regist.do" method="post">
                 <table>
                     <tr>
-                        <th colspan="2">자전거 등록</th>
+                        <th colspan="4">자전거 등록</th>
+                    </tr>
+                    <tr>
+                        <td>대여소 이름</td>
+                        <td>
+                            <input id="station" type="text" name="station">
+                        </td>
                     </tr>
                     <tr>
                         <td>상태</td>
@@ -45,6 +51,9 @@
                     <tr>
                         <th colspan="2">
                             <input type="submit" value="확인">
+                        </th>
+                        <th colspan="1">
+                            <input type="submit" value="취소">
                         </th>
                     </tr>
                 </table>
