@@ -1,1 +1,19 @@
-/* Todo userRegistMgmt.css 만들기 */
+.centered_link {
+    text-align: center;
+}
+
+.row_name {
+    margin: 0 auto;
+}
+
+a {
+    text-align: center;
+    font-family: SCDream3;
+}
+
+@font-face {
+    font-family: "SCDream3";
+    src: url("../../font/SCDream/SCDream3.otf");
+}
+
+/* Todo 가운데 정렬 */

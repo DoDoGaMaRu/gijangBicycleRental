@@ -1,16 +1,13 @@
-/* Todo userMinorsRegist.css 만들기 */
+.info_table { margin: 0 auto; }
+.info_table .row_name {font-family: SCDream3; font-size: 20px;}
+.info_table .row_text { border: black solid 1px; font-size: 16px; padding-left: 10px; box-sizing: border-box; width: 350px; height: 30px; font-family: SCDream3;}
+.info_table .btn_wrap {display: flex; padding-top: 15px; justify-content: space-between; }
+.info_table .btn_wrap .table_btn { width: 49%; box-sizing: border-box; border: black solid 1px; font-family: SCDream3; font-size: 20px; margin: 0 auto; }
+.info_table .btn_wrap .table_btn:hover {background-color: #19288CFF; color: white;}
 
-.cont_box table tr {
-    text-align: center;
-}
-
-table {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3rem;
-}
-
+/* font */
 @font-face {
     font-family: "SCDream3";
-    src: url("../font/SCDream/SCDream3.otf");
+    src: url("../../font/SCDream/SCDream3.otf");
 }
+

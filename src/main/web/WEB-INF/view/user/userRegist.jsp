@@ -10,7 +10,7 @@
 <html>
 <head>
     <title><%=title%></title>
-    <%-- <link rel="stylesheet" href="${resources_path}/css/reset.css"> --%>
+    <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
     <link rel="stylesheet" href="${resources_path}/css/user/userRegist.css">
 
@@ -18,6 +18,7 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script defer type="text/javascript" src="${resources_path}/js/cal.js"></script>
+
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -26,49 +27,48 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <form action="regist.do" method="post">
-                <table>
-                    <tr>
-                        <th colspan="2">회원가입</th>
-                    </tr>
-                    <tr>
-                        <td>아이디</td>
-                        <td><input type="text" name="id"></td>
-                        <td><button type="button" onclick="checkDuplicateId()">아이디 중복 확인</button></td>
-                        <%-- Todo ID 중복 검사 할 것 --%>
-                    </tr>
-                    <tr>
-                        <td>비밀번호</td>
-                        <td><input type="password" name="pw"></td>
-                    </tr>
-                    <tr>
-                        <td>이름</td>
-                        <td><input type="text" name="name"></td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td><input type="text" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>생년월일</td>
-                        <td><input type="text" id="birthDate" name="birthDate" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>주소</td>
-                        <td><input type="text" name="address"></td>
-                    </tr>
-                    <tr>
-                        <td>전화번호</td>
-                        <td><input type="text" name="phoneNumber"></td>
-                        <%-- Todo 본인인증 만들어야 하나...? 일단 놔둠 --%>
-                    </tr>
-                    <tr>
-                        <th colspan="2">
-                            <input type="submit" value="가입하기">
-                        </th>
-                    </tr>
-                </table>
-            </form>
+            <div class="main_cont">
+                <form class="regist_form" action="regist.do" method="post">
+                    <table class="info_table">
+                        <tr>
+                            <td class="row_name">아이디</td>
+                            <td><input class="row_text" type="text" name="id" required="required"></td>
+                            <td><button type="button" onclick="checkDuplicateId()">아이디 중복 확인</button></td>
+                        </tr>
+                        <tr>
+                            <td class="row_name">비밀번호</td>
+                            <td><input class="row_text" type="password" name="pw" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td class="row_name">이름</td>
+                            <td><input class="row_text" type="text" name="name" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td class="row_name">이메일</td>
+                            <td><input class="row_text" type="text" name="email" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td class="row_name">생년월일</td>
+                            <td><input class="row_text" id="birthDate" name="birthDate" required="required" readonly></td>
+                        </tr>
+                        <tr>
+                            <td class="row_name">주소</td>
+                            <td><input class="row_text" type="text" name="address" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td class="row_name">전화번호</td>
+                            <td><input class="row_text" type="text" name="phoneNumber"></td>
+                            <%-- Todo 본인인증 만들어야 하나...? 일단 놔둠 --%>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="btn_wrap">
+                                <input class="table_btn" type="submit" value="가입하기" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
     </div>
 </main>

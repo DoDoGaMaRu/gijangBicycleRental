@@ -17,9 +17,9 @@
 <html>
 <head>
     <title><%=title%></title>
-    <%-- <link rel="stylesheet" href="${resources_path}/css/reset.css"> --%>
+    <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
-    <link rel="stylesheet" href="${resources_path}/css/user.css">
+    <link rel="stylesheet" href="${resources_path}/css/user/user.css">
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -28,8 +28,12 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="user/registMgmt.do">회원 가입</a>
-            <a href="user/info.do">회원 정보 조회</a>
+            <a href="user/registMgmt.do" class="centered_link">
+                <span class="row_name">회원 가입</span>
+            </a>
+            <a href="user/userInfo.do" class="centered_link">
+                <span class="row_name">회원 정보 조회</span>
+            </a>
         </div>
     </div>
 </main>

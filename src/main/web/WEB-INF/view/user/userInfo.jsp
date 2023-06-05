@@ -1,3 +1,5 @@
+<%@ page import="persistence.entity.User" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="resources_path" value="${pageContext.request.contextPath}/resources"/>
@@ -5,6 +7,7 @@
 <%
     request.setCharacterEncoding("UTF-8");
     String title = "회원 정보 조회";
+    User user = (User) request.getAttribute("user");
 %>
 
 <html>
@@ -22,35 +25,48 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <table>
-                <tr>
-                    <th colspan="2">회원 정보 조회</th>
-                </tr>
-                <tr>
-                    <td>아이디</td>
-                    <td>id_value</td>
-                </tr>
-                <tr>
-                    <td>이름</td>
-                    <td>name_value</td>
-                </tr>
-                <tr>
-                    <td>이메일</td>
-                    <td>email_value</td>
-                </tr>
-                <tr>
-                    <td>생년월일</td>
-                    <td>birthDate_value</td>
-                </tr>
-                <tr>
-                    <td>주소</td>
-                    <td>address_value</td>
-                </tr>
-                <tr>
-                    <td>전화번호</td>
-                    <td>phoneNumber_value</td>
-                </tr>
-            </table>
+            <div class="main_cont">
+                <table class="info_table">
+                    <tr>
+                        <td class="row_name">아이디</td>
+                        <td>
+                            <p class="row_text"><% out.print(user.getId()); %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="row_name">이름</td>
+                        <td>
+                            <p class="row_text"><% out.print(user.getName()); %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="row_name">이메일</td>
+                        <td>
+                            <p class="row_text" class="row_text"><% out.print(user.getEmail()); %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="row_name">생년월일</td>
+                        <td>
+                            <p class="row_text"><% out.print(user.getBirthDate()); %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="row_name">주소</td>
+                        <td>
+                            <p class="row_text"><% out.print(user.getAddress()); %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="row_name">전화번호</td>
+                        <td>
+                            <p class="row_text"><% out.print(user.getPhone()); %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </main>
