@@ -11,7 +11,7 @@
 <c:set var="view_path" value="${pageContext.request.contextPath}/../WEB-INF/view"/>
 <%
     request.setCharacterEncoding("UTF-8");
-    String title = "대여 관리";
+    String title = "자전거 대여";
 %>
 
 <html>
@@ -19,6 +19,7 @@
     <title><%=title%></title>
     <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
+    <link rel="stylesheet" href="${resources_path}/css/rental/bicycleRental.css">
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -27,8 +28,17 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="rental/rental.do">자전거 대여</a>
-            <a href="rental/state.do">대여 현황 조회</a>
+            <form action="rental/rentalOK.do" method="post">
+.
+
+                <h1>자전거 ID 입력</h1>
+
+                <input type="text"><br>
+
+                <button type="submit">자전거 대여하기</button>
+
+            </form>
+
         </div>
     </div>
 </main>
