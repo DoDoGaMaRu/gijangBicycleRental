@@ -27,18 +27,13 @@ form table tr{
 form table td{
     width: 100px;
 }
-form table tr td:nth-child(1){
-    min-width: 100px;
-}
+
 form table td{
     max-height: 50px;
     border-collapse : collapse;
     text-align: center;
 }
-form table td:nth-child(1){
-    max-width: 20px;
-    text-align: center;
-}
+
 
 form table td input{
     width: 300px;
