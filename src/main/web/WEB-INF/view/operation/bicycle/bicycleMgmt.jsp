@@ -27,7 +27,8 @@
 <main>
     <div class="container">
         <div class="cont_box">
-
+            <a href="bicycleMgmt/regist.do">자전거 등록</a>
+            <a href="bicycleMgmt/info.do">자전거 조회</a>
         </div>
     </div>
 </main>

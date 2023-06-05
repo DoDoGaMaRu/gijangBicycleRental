@@ -2,21 +2,22 @@ package controller.operation;
 
 import controller.Controller;
 import controller.HttpUtil;
-import persistence.dao.StationDAO;
-import persistence.entity.Station;
+import persistence.dao.BicycleDAO;
+import persistence.entity.Bicycle;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class StationRegistController implements Controller {
-    private final StationDAO stationDAO = StationDAO.getInstance();
+public class BicycleRegistController implements Controller {
+    private final BicycleDAO bicycleDAO = BicycleDAO.getInstance();
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getMethod().equals("GET")) {
-            HttpUtil.forward(req, res, "/WEB-INF/view/operation/station/stationRegist.jsp");
+            HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleRegist.jsp");
         }
         else if (req.getMethod().equals("POST")) {
             registOK(req, res);
@@ -24,13 +25,12 @@ public class StationRegistController implements Controller {
     }
 
     private void registOK(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Station station = Station.builder()
-                .name(req.getParameter("name"))
-                .coordinate(req.getParameter("coordinate"))
-                .address(req.getParameter("address"))
+        Bicycle bicycle = Bicycle.builder()
+                .id(Long.valueOf(req.getParameter("id")))
+                .state(req.getParameter("state"))
                 .build();
-        stationDAO.create(station);
+        bicycleDAO.create(bicycle);
 
-        HttpUtil.forward(req, res, "/WEB-INF/view/operation/station/stationMgmt.jsp");
-}
+        HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleMgmt.jsp");
+    }
 }
