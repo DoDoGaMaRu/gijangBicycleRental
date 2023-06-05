@@ -39,6 +39,7 @@
                         <td>대여 상태</td>
                     </tr>
                 </table>
+                <a class="cansle_but" href="../operation.do">돌아가기</a>
                 <a class="regist_but" href="bicycleMgmt/regist.do">자전거 등록</a>
                 <a href="bicycleMgmt/info.do">자전거 조회</a>
             </form>

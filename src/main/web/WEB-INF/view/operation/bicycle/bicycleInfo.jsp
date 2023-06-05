@@ -50,7 +50,9 @@
                         <td> input</td>
                     </tr>
                 </table>
+                <a class="cansle_but" href="../bicycleMgmt.do">돌아가기</a>
             </form>
+
         </div>
     </div>
 </main>

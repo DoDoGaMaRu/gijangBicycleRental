@@ -8,6 +8,7 @@
     padding: 20px;
     margin: 0 auto;
     width: 900px;
+    position: relative;
 }
 
 form table{
@@ -36,4 +37,13 @@ form table td:nth-child(1){
     position: absolute;
     top: 500px;
     right: 0;
+}
+.cansle_but{
+    position: absolute;
+    width: 150px;
+    left: 50%;
+    top: 100%;
+    text-align: center;
+    border : 1px solid black;
+    text-decoration: none;
 }

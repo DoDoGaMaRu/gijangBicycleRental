@@ -32,8 +32,19 @@ form table td:nth-child(1){
 }
 .regist_but{
     position: absolute;
+    width: 150px;
     right: 0%;
     top: 100%;
+    border : 1px solid black;
+    text-decoration: none;
+    text-align: center;
+}
+.cansle_but{
+    position: absolute;
+    width: 150px;
+    left: 0%;
+    top: 100%;
+    text-align: center;
     border : 1px solid black;
     text-decoration: none;
 }

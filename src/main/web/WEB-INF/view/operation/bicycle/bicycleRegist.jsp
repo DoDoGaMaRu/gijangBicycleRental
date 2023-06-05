@@ -50,7 +50,7 @@
 
                         </td>
                         <td>
-                            <input type="submit" value="취소">
+                            <input class="button" type="button" value="취소" onclick="window.location.href='../bicycleMgmt.do'">
                         </td>
                     </tr>
                 </table>
