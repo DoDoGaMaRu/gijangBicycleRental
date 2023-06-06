@@ -14,14 +14,18 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
-    // DAL
+    // DB, JPA
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
-    implementation group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.8.0'
-    implementation 'org.mybatis:mybatis:3.5.6'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.1.Final'
 
     // Lombok
     implementation 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    // Servlet
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+
 }
 
 test {
