@@ -27,7 +27,8 @@
 <main>
     <div class="container">
         <div class="cont_box">
-
+            <a href="history/paymentInfo.do">결제 내역 조회</a>
+            <a href="history/bicycleStatistics.do">자전거별 운영 통계</a>
         </div>
     </div>
 </main>

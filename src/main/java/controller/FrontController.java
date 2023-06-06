@@ -31,6 +31,8 @@ public class FrontController extends HttpServlet {
         list = new HashMap<String, Controller>();
         list.put("/main.do", new MainController());
         list.put("/history.do", new HistoryController());
+        list.put("/history/paymentInfo.do", new PaymentInfoController());
+        list.put("/history/bicycleStatistics.do", new BicycleStatisticsController());
         list.put("/notice.do", new NoticeController());
         list.put("/notice/view.do", new NoticeViewController());
         list.put("/operation.do", new OperationController());
