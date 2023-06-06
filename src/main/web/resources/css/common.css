@@ -1,0 +1,33 @@
+/* Reset */
+* {margin: 0; padding: 0;}
+
+/* Layout */
+header {display: block; height: 180px;}
+main {display: block;}
+footer {display: block; height: 150px;}
+
+/* Container */
+.container {width: 70%; margin: 0 auto; min-width: 1180px;}
+
+/* Header */
+header .ban {position: relative; height: 70%; margin-top: 20px;}
+header .ban .ban_logo {float: left; padding-top: 40px; font-size: 20px; font-family: SCDream3; font-weight: bold;}
+
+header .ban .ban_login {float: right;}
+header .ban .ban_login .login_img {height: 80px; width: 80px;}
+header .ban .ban_login .login_btn {display: block; margin-top: 10px; text-align: center; border: #000 solid 1px; font-family: SCDream3;}
+header .ban .ban_login .login_btn:hover {background-color: #000; color: #fff;}
+
+header .title {text-align: center; height: 30%;}
+header .title .title_text {font-size: 24px; font-family: SCDream3; font-weight: bold}
+
+/* Main */
+main .cont_box {box-sizing: border-box; padding: 20px; height: 550px; border: #19288CFF solid 2px}
+
+/* footer */
+
+/* font */
+@font-face {
+    font-family: "SCDream3";
+    src: url("../font/SCDream/SCDream3.otf");
+}
