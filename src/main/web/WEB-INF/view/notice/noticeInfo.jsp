@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: DaeHwan
   Date: 2023-05-30
-  Time: 오후 9:34
+  Time: 오후 9:21
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,7 +11,7 @@
 <c:set var="view_path" value="${pageContext.request.contextPath}/../WEB-INF/view"/>
 <%
     request.setCharacterEncoding("UTF-8");
-    String title = "회원 관리";
+    String title = "QnA 조회";
 %>
 
 <html>
@@ -19,7 +19,7 @@
     <title><%=title%></title>
     <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
-    <link rel="stylesheet" href="${resources_path}/css/user/user.css">
+    <link rel="stylesheet" href="${resources_path}/css/notice/notice.css">
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -28,12 +28,25 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="user/registMgmt.do" class="centered_link">
-                <span class="row_name">회원 가입</span>
-            </a>
-            <a href="user/userInfo.do" class="centered_link">
-                <span class="row_name">회원 정보 조회</span>
-            </a>
+            <table class="qna">
+                <tr>
+                    <td>Q/A</td>
+                    <td>
+                        <div class="qna_title_container"></div>
+                        <div class="qna_content_container"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Q/A 답변</td>
+                    <td>
+                        <form action="regist.do" method="post">
+                            <textarea class="answer_container" name="content"></textarea>
+                            <input class="button" type="submit" value="답변 등록">
+                        </form>
+                        <div class="answer_container"></div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </main>

@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class StationRegistController implements Controller {
     private final StationDAO stationDAO = StationDAO.getInstance();
@@ -29,8 +30,12 @@ public class StationRegistController implements Controller {
                 .coordinate(req.getParameter("coordinate"))
                 .address(req.getParameter("address"))
                 .build();
-        stationDAO.create(station);
 
-        HttpUtil.forward(req, res, "/WEB-INF/view/operation/station/stationMgmt.jsp");
+        String alertMessege = (stationDAO.create(station) != null) ? "대여소 등록에 성공하였습니다.":"대여소 등록에 실패하였습니다.";
+        String redirectPath = "/gijangBicycleRental/operation/stationMgmt.do";
+
+        res.setContentType("text/html; charset=utf-8");
+        res.getWriter().printf("<script>alert('%s'); location.href='%s';</script>", alertMessege, redirectPath);
+        res.getWriter().flush();
     }
 }

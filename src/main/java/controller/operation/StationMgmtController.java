@@ -14,6 +14,8 @@ public class StationMgmtController implements Controller {
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        req.setAttribute("stations", stationDAO.findAll());
+
         HttpUtil.forward(req, res, "/WEB-INF/view/operation/station/stationMgmt.jsp");
     }
 }

@@ -19,6 +19,7 @@
     <title><%=title%></title>
     <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
+    <link rel="stylesheet" href="${resources_path}/css/notice/notice.css">
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -27,7 +28,28 @@
 <main>
     <div class="container">
         <div class="cont_box">
-
+            <a href="notice/view.do">
+            <table class="qna_list" border="1">
+                <tr>
+                    <th>번호</th>
+                    <th class="title">제목</th>
+                    <th>작성자</th>
+                    <th class="date">게시일</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>질문합니다.</td>
+                    <td>홍길동</td>
+                    <td>2023.05.18 08:12:05</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>또 질문합니다.</td>
+                    <td>홍길동</td>
+                    <td>2023.05.18 08:12:05</td>
+                </tr>
+            </table>
+            </a>
         </div>
     </div>
 </main>

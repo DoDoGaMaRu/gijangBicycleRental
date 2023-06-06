@@ -1,0 +1,36 @@
+/* Cont Layout */
+.main_cont {width: 70%; margin: 0 auto;}
+.cont_top {height: 10%;}
+.cont_middle {height: 75%;}
+.cont_bottom {height: 15%;}
+
+
+/* Cont_top*/
+.cont_top .cont_title {padding: 15px; font-family: SCDream3; font-size: 20px;}
+
+/* Cont_middle */
+.cont_middle table {table-layout:fixed; width: 100%; border-collapse: collapse; border: #000000 solid 1px; font-family: SCDream3;}
+
+.cont_middle th:nth-child(1) {width: 100px}
+.cont_middle th:nth-child(2) {width: 250px}
+
+.cont_middle th {background-color: #eeeeee;}
+.cont_middle tr {height: 30px;}
+.cont_middle th,
+.cont_middle td {border: 1px solid #aaa; background-clip: padding-box; scroll-snap-align: start; word-break:break-all;}
+.cont_middle td {padding-left: 10px;}
+.cont_middle td:first-child {padding-left: 0; text-align: center;}
+.cont_middle thead {font-size: 18px;}
+.cont_middle tbody {font-size: 16px;}
+.cont_middle tbody tr:last-child th,
+.cont_middle tbody tr:last-child td {border-bottom: 0;}
+
+/* Cont_bottom */
+.cont_bottom .regist_btn {float: right; width: 100px; box-sizing: border-box; border: black solid 1px; text-align: center; font-family: SCDream3; font-size: 20px;}
+.cont_bottom .regist_btn:hover {background-color: #19288CFF; color: white;}
+
+/* font */
+@font-face {
+    font-family: "SCDream3";
+    src: url("../../../font/SCDream/SCDream3.otf");
+}

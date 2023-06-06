@@ -1,13 +1,12 @@
 package controller;
 
-import controller.history.HistoryController;
-import controller.notice.NoticeController;
+import controller.history.*;
+import controller.notice.*;
 import controller.operation.*;
-import controller.rental.RentalController;
-import controller.user.UserController;
+import controller.rental.*;
+import controller.user.*;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 
 import javax.servlet.ServletConfig;
@@ -32,14 +31,24 @@ public class FrontController extends HttpServlet {
         list = new HashMap<String, Controller>();
         list.put("/main.do", new MainController());
         list.put("/history.do", new HistoryController());
+        list.put("/history/paymentInfo.do", new PaymentInfoController());
+        list.put("/history/bicycleStatistics.do", new BicycleStatisticsController());
         list.put("/notice.do", new NoticeController());
+        list.put("/notice/view.do", new NoticeViewController());
         list.put("/operation.do", new OperationController());
         list.put("/operation/bicycleMgmt.do", new BicycleMgmtController());
+        list.put("/operation/bicycleMgmt/regist.do", new BicycleRegistController());
+        list.put("/operation/bicycleMgmt/info.do", new BicycleInfoController());
         list.put("/operation/stationMgmt.do", new StationMgmtController());
         list.put("/operation/stationMgmt/regist.do", new StationRegistController());
         list.put("/operation/stationMgmt/info.do", new StationInfoController());
         list.put("/rental.do", new RentalController());
         list.put("/user.do", new UserController());
+        list.put("/user/registMgmt.do", new UserRegistMgmtController());
+        list.put("/user/registMgmt/regist.do", new UserRegistController());
+        list.put("/user/registMgmt/minorsRegist.do", new UserMinorsRegistController());
+        list.put("/user/userInfo.do", new UserInfoController());
+
     }
 
 

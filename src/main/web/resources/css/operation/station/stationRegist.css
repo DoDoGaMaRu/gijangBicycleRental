@@ -1,1 +1,3 @@
-#map {width: 350px; height: 350px;}
+/* Info Table */
+.info_table .row_text {border: black solid 1px; font-size: 16px; padding-left: 10px;}
+.info_table .btn_wrap .table_btn {width: 49%;}
