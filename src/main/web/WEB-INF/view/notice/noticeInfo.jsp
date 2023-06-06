@@ -11,7 +11,7 @@
 <c:set var="view_path" value="${pageContext.request.contextPath}/../WEB-INF/view"/>
 <%
     request.setCharacterEncoding("UTF-8");
-    String title = "공지 관리";
+    String title = "QnA 조회";
 %>
 
 <html>
@@ -28,28 +28,25 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="notice/view.do">
-            <table class="qna_list" border="1">
+            <table class="qna">
                 <tr>
-                    <th>번호</th>
-                    <th class="title">제목</th>
-                    <th>작성자</th>
-                    <th class="date">게시일</th>
+                    <td>Q/A</td>
+                    <td>
+                        <div class="qna_title_container"></div>
+                        <div class="qna_content_container"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>질문합니다.</td>
-                    <td>홍길동</td>
-                    <td>2023.05.18 08:12:05</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>또 질문합니다.</td>
-                    <td>홍길동</td>
-                    <td>2023.05.18 08:12:05</td>
+                    <td>Q/A 답변</td>
+                    <td>
+                        <form action="regist.do" method="post">
+                            <textarea class="answer_container" name="content"></textarea>
+                            <input class="button" type="submit" value="답변 등록">
+                        </form>
+                        <div class="answer_container"></div>
+                    </td>
                 </tr>
             </table>
-            </a>
         </div>
     </div>
 </main>
