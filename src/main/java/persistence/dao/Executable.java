@@ -1,7 +1,7 @@
 package persistence.dao;
 
-import org.apache.ibatis.session.SqlSession;
+import javax.persistence.EntityManager;
 
 public interface Executable<T> {
-    T run(SqlSession session) throws Exception;
+    T exec(EntityManager em) throws Exception;
 }
