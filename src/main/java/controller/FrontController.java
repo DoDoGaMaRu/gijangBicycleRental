@@ -1,14 +1,12 @@
 package controller;
 
-import controller.history.HistoryController;
+import controller.history.*;
 import controller.notice.*;
 import controller.operation.*;
-import controller.rental.RentalController;
-import controller.user.UserController;
+import controller.rental.*;
 import controller.user.*;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 
 import javax.servlet.ServletConfig;
