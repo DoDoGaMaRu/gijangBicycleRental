@@ -1,0 +1,49 @@
+#map {width: 350px; height: 350px;}
+*{
+    font-weight: bold;
+    font-size: 22px;
+}
+.cont_box form{
+    height: 450px;
+    padding: 20px;
+    margin: 0 auto;
+    width: 900px;
+    position: relative;
+}
+
+form table{
+    position: relative;
+    max-height: 450px;
+    width: 900px;
+    border-collapse : collapse;
+}
+form table th{
+    max-width: 60px;
+}
+form table tr{
+    border: 100px solid white;
+}
+form table td{
+    max-width: 50px;
+    height : 60px;
+    border-collapse : collapse;
+    text-align: center;
+}
+form table td:nth-child(1){
+    max-width: 20px;
+    text-align: center;
+}
+.regist_but{
+    position: absolute;
+    top: 500px;
+    right: 0;
+}
+.cansle_but{
+    position: absolute;
+    width: 150px;
+    left: 50%;
+    top: 100%;
+    text-align: center;
+    border : 1px solid black;
+    text-decoration: none;
+}
