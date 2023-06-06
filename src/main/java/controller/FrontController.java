@@ -37,6 +37,8 @@ public class FrontController extends HttpServlet {
         list.put("/notice/view.do", new NoticeViewController());
         list.put("/operation.do", new OperationController());
         list.put("/operation/bicycleMgmt.do", new BicycleMgmtController());
+        list.put("/operation/bicycleMgmt/regist.do", new BicycleRegistController());
+        list.put("/operation/bicycleMgmt/info.do", new BicycleInfoController());
         list.put("/operation/stationMgmt.do", new StationMgmtController());
         list.put("/operation/stationMgmt/regist.do", new StationRegistController());
         list.put("/operation/stationMgmt/info.do", new StationInfoController());
