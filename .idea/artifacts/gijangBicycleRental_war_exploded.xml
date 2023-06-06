@@ -2,11 +2,11 @@
   <artifact type="exploded-war" name="gijangBicycleRental:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/gijangBicycleRental_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="gijangBicycleRental/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="gijangBicycleRental.main" />
           <element id="jpa-descriptors" facet="gijangBicycleRental.main/jpa/JPA" />
+          <element id="module-output" name="gijangBicycleRental" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
@@ -38,6 +38,7 @@
           <element id="library" level="project" name="Gradle: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="gijangBicycleRental/web/Web" />
     </root>
   </artifact>
 </component>

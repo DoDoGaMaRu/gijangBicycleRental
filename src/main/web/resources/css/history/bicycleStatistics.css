@@ -1,0 +1,66 @@
+.cont_box {
+    font-family: SCDream3;
+    font-size: 25px;
+}
+/* 조회바 */
+.inquiry_bar {
+    padding: 20px 60px;
+    border-bottom: rgb(25, 40, 140) solid 2px;
+}
+.input_bicycleNum {
+    font-family: SCDream3;
+    font-size: 22px;
+}
+.select_bicycleState {
+    font-family: SCDream3;
+    font-size: 22px;
+    padding: 2px 10px;
+    margin-left: 30px;
+}
+
+/* 자전거 정보 */
+.bicycle_details {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: rgb(25, 40, 140) solid 2px;
+}
+.detail {
+    flex: 1;
+    text-align: center;
+    border-right: rgb(25, 40, 140) solid 2px;
+}
+.detail:nth-child(3) {
+    border: 0;
+}
+
+/*조회 결과 박스*/
+.bicycleResults {
+    height: 330px;
+    overflow: auto;
+    padding: 10px 0;
+    flex-direction: column;
+}
+.resultSet{
+    display: flex;
+    margin-bottom: 20px;
+}
+.res {
+    flex: 1;
+    text-align: center;
+    border-right: black dashed 1px;
+}
+.res:nth-child(3) {
+    border: 0;
+}
+
+/* 조회 버튼 */
+.btnBox {
+    padding: 10px 0;
+    text-align: center;
+    border-top: rgb(25, 40, 140) solid 2px;
+}
+.inquiry_Btn {
+    font-family: SCDream3;
+    font-size: 20px;
+    padding: 0 15px;
+}
