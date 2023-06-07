@@ -16,6 +16,8 @@
     final int MAX_OF_LIST = 10;
     final int MAX_OF_PAGE = 10;
     List<Station> stations = (List<Station>) request.getAttribute("stations");
+    Integer curPage = (Integer) request.getAttribute("curPage");
+    Integer endPage = (Integer) request.getAttribute("endPage");
 %>
 
 <html>
@@ -71,9 +73,6 @@
                     </div>
                     <div class="page_btn_wrap">
                         <%
-                            Integer curPage = (Integer) request.getAttribute("curPage");
-                            Integer endPage = (Integer) request.getAttribute("endPage");
-
                             int remainRange = endPage - curPage + 1;
                             int leftRange = (remainRange<MAX_OF_PAGE/2) ? MAX_OF_PAGE-(remainRange) : MAX_OF_PAGE/2;
                             int pageStart = (curPage<=leftRange) ? 1 : curPage-leftRange;
