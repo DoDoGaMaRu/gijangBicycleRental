@@ -28,7 +28,7 @@ public class StationMgmtController implements Controller {
         int firstIdx = (page - 1) * PAGE_SIZE;
         req.setAttribute("stations", stationDAO.findAll(firstIdx, PAGE_SIZE));
         req.setAttribute("curPage", page);
-        req.setAttribute("maxPage", (int) ((stationDAO.count()-1)/PAGE_SIZE + 1));
+        req.setAttribute("endPage", (int) ((stationDAO.count()-1)/PAGE_SIZE + 1));
 
         HttpUtil.forward(req, res, "/WEB-INF/view/operation/station/stationMgmt.jsp");
     }
