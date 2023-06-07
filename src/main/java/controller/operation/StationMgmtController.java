@@ -14,7 +14,21 @@ public class StationMgmtController implements Controller {
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        req.setAttribute("stations", stationDAO.findAll());
+        final int PAGE_SIZE = 10;
+        int page;
+
+        String tempPage = req.getParameter("page");
+        try {
+            page = (tempPage!=null) ? Integer.parseInt(tempPage) : 1;
+        }
+        catch (NumberFormatException e) {
+            page = 1;
+        }
+
+        int firstIdx = (page - 1) * PAGE_SIZE;
+        req.setAttribute("stations", stationDAO.findAll(firstIdx, PAGE_SIZE));
+        req.setAttribute("curPage", page);
+        req.setAttribute("maxPage", (int) ((stationDAO.count()-1)/PAGE_SIZE + 1));
 
         HttpUtil.forward(req, res, "/WEB-INF/view/operation/station/stationMgmt.jsp");
     }

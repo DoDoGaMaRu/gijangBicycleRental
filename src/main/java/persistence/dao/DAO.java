@@ -71,9 +71,28 @@ public abstract class DAO<T, K> {
         });
     }
 
+    public List<T> findAllBy(String column, Object value, int firstResult, int maxResult) {
+        return (List<T>) execQuery(em -> {
+            Query query = em.createQuery("SELECT t FROM "+ entityClass.getSimpleName() +" t WHERE t."+column+"=:"+column)
+                    .setParameter(column, value)
+                    .setFirstResult(firstResult)
+                    .setMaxResults(maxResult);
+            return query.getResultList();
+        });
+    }
+
     public List<T> findAll() {
         return (List<T>) execQuery(em -> {
             Query query = em.createQuery("SELECT t FROM "+ entityClass.getSimpleName() +" t");
+            return query.getResultList();
+        });
+    }
+
+    public List<T> findAll(int firstResult, int maxResult) {
+        return (List<T>) execQuery(em -> {
+            Query query = em.createQuery("SELECT t FROM "+ entityClass.getSimpleName() +" t")
+                    .setFirstResult(firstResult)
+                    .setMaxResults(maxResult);
             return query.getResultList();
         });
     }
