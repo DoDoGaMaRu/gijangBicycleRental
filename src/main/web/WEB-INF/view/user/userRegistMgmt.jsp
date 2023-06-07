@@ -21,12 +21,14 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="registMgmt/regist.do" class="centered_link">
-                <span class="row_name">일반 회원가입</span>
-            </a>
-            <a href="registMgmt/minorsRegist.do" class="centered_link">
-                <span class="row_name">미성년자 회원가입</span>
-            </a>
+            <div class="centered_links">
+                <a href="registMgmt/regist.do">
+                    <span class="row_name">일반 회원가입</span>
+                </a>
+                <a href="registMgmt/minorsRegist.do">
+                    <span class="row_name">미성년자 회원가입</span>
+                </a>
+            </div>
         </div>
     </div>
 </main>

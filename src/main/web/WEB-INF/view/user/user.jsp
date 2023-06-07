@@ -28,12 +28,14 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="user/registMgmt.do" class="centered_link">
-                <span class="row_name">회원 가입</span>
-            </a>
-            <a href="user/userInfo.do" class="centered_link">
-                <span class="row_name">회원 정보 조회</span>
-            </a>
+            <div class="centered_links">
+                <a href="user/registMgmt.do">
+                    <span class="row_name">회원 가입</span>
+                </a>
+                <a href="user/userInfo.do">
+                    <span class="row_name">회원 정보 조회</span>
+                </a>
+            </div>
         </div>
     </div>
 </main>

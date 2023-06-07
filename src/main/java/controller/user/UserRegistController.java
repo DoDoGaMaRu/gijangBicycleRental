@@ -13,8 +13,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 
-public class
-UserRegistController implements Controller {
+public class UserRegistController implements Controller {
     private final UserDAO userDAO = UserDAO.getInstance();
 
     @Override
