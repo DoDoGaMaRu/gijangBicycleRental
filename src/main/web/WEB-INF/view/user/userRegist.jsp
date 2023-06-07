@@ -17,7 +17,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-    <script defer type="text/javascript" src="${resources_path}/js/cal.js"></script>
 
 </head>
 <body>
@@ -45,11 +44,11 @@
                         </tr>
                         <tr>
                             <td class="row_name">이메일</td>
-                            <td><input class="row_text" type="text" name="email" required="required"></td>
+                            <td><input class="row_text" type="text" name="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></td>
                         </tr>
                         <tr>
                             <td class="row_name">생년월일</td>
-                            <td><input class="row_text" id="birthDate" name="birthDate" required="required" readonly></td>
+                            <td><label><input type="date" class="row_text" name="birthDate" required></label></td>
                         </tr>
                         <tr>
                             <td class="row_name">주소</td>
@@ -57,8 +56,7 @@
                         </tr>
                         <tr>
                             <td class="row_name">전화번호</td>
-                            <td><input class="row_text" type="text" name="phoneNumber"></td>
-                            <%-- Todo 본인인증 만들어야 하나...? 일단 놔둠 --%>
+                            <td><input class="row_text" type="text" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"></td>
                         </tr>
                         <tr>
                             <td></td>
