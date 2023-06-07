@@ -14,6 +14,8 @@
     request.setCharacterEncoding("UTF-8");
     String title = "대여소 관리";
     final int MAX_OF_LIST = 10;
+    final int MAX_OF_PAGE = 10;
+    List<Station> stations = (List<Station>) request.getAttribute("stations");
 %>
 
 <html>
@@ -46,7 +48,6 @@
                             </thead>
                             <tbody>
                             <%
-                                List<Station> stations = (List<Station>) request.getAttribute("stations");
                                 Station s = null;
                                 String infoAtt;
                                 for (int i=0; i<MAX_OF_LIST; i++) {
@@ -71,11 +72,13 @@
                     <div class="page_btn_wrap">
                         <%
                             Integer curPage = (Integer) request.getAttribute("curPage");
-                            Integer maxPage = (Integer) request.getAttribute("maxPage");
+                            Integer endPage = (Integer) request.getAttribute("endPage");
 
-                            int pageStart = curPage/10 + 1;
+                            int remainRange = endPage - curPage + 1;
+                            int leftRange = (remainRange<MAX_OF_PAGE/2) ? MAX_OF_PAGE-(remainRange) : MAX_OF_PAGE/2;
+                            int pageStart = (curPage<=leftRange) ? 1 : curPage-leftRange;
 
-                            for (int i = pageStart; i<pageStart+10 && i<=maxPage; i++) {
+                            for (int i = pageStart; i<pageStart+MAX_OF_PAGE && i<= endPage; i++) {
                                 String pageBtnClass = " class='page_btn "+(curPage.equals(i) ? "cur_page":"")+"'";
                                 String pageBtnAtt = " style='cursor:hand' onclick=\"location.href='stationMgmt.do?page="+i+"'\"";
                                 out.print("<div"+ pageBtnClass + pageBtnAtt +">");
