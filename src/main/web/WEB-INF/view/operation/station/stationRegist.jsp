@@ -20,9 +20,10 @@
     <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
     <link rel="stylesheet" href="${resources_path}/css/operation/station/stationRegist.css">
+    <link rel="stylesheet" href="${resources_path}/css/operation/station/stationInfoTable.css">
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=35cc06d0fff9be7acbcab450ef07af23"></script>
-    <script defer type="text/javascript" src="${resources_path}/js/map.js"></script>
+    <script defer type="text/javascript" src="${resources_path}/js/operation/station/stationRegist.js"></script>
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -31,38 +32,41 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <form action="regist.do" method="post">
-                <table>
-                    <tr>
-                        <th colspan="2">대여소 등록</th>
-                    </tr>
-                    <tr>
-                        <td>대여소 이름</td>
-                        <td><input type="text" name="name"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><div id="map"></div></td>
-                    </tr>
-                    <tr>
-                        <td>대여소 위치</td>
-                        <td>
-                            <input id="coordinate" type="text" name="coordinate">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>사물 주소</td>
-                        <td>
-                            <input type="text" name="address">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th colspan="2">
-                            <input type="submit" value="확인">
-                        </th>
-                    </tr>
-                </table>
-            </form>
+            <div class="main_cont">
+                <form class="regist_form" action="regist.do" method="post">
+                    <table class="info_table">
+                        <tr>
+                            <td class="row_name">대여소 이름</td>
+                            <td>
+                                <input class="row_text" type="text" name="name" required="required">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><div id="map"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="row_name">대여소 위치</td>
+                            <td>
+                                <input class="row_text" id="coordinate" type="text" name="coordinate" required="required" pattern="[0-9.,]*">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="row_name">사물 주소</td>
+                            <td>
+                                <input class="row_text" type="text" name="address" required="required">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="btn_wrap">
+                                <input class="table_btn" type="button" onclick="history.back();" value="취소" />
+                                <input class="table_btn" type="submit" value="확인" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
     </div>
 </main>

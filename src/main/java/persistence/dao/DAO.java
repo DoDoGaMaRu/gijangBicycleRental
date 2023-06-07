@@ -71,9 +71,28 @@ public abstract class DAO<T, K> {
         });
     }
 
+    public List<T> findAllBy(String column, Object value, int firstResult, int maxResult) {
+        return (List<T>) execQuery(em -> {
+            Query query = em.createQuery("SELECT t FROM "+ entityClass.getSimpleName() +" t WHERE t."+column+"=:"+column)
+                    .setParameter(column, value)
+                    .setFirstResult(firstResult)
+                    .setMaxResults(maxResult);
+            return query.getResultList();
+        });
+    }
+
     public List<T> findAll() {
         return (List<T>) execQuery(em -> {
-            Query query = em.createQuery("SELECT b FROM "+ entityClass.getSimpleName() +" b");
+            Query query = em.createQuery("SELECT t FROM "+ entityClass.getSimpleName() +" t");
+            return query.getResultList();
+        });
+    }
+
+    public List<T> findAll(int firstResult, int maxResult) {
+        return (List<T>) execQuery(em -> {
+            Query query = em.createQuery("SELECT t FROM "+ entityClass.getSimpleName() +" t")
+                    .setFirstResult(firstResult)
+                    .setMaxResults(maxResult);
             return query.getResultList();
         });
     }
@@ -88,6 +107,21 @@ public abstract class DAO<T, K> {
     public T update(T entity) {
         return (T) execQuery(em -> {
             return em.merge(entity);
+        });
+    }
+
+    public Long count() {
+        return (Long) execQuery(em -> {
+            Query query = em.createQuery("SELECT COUNT(t) FROM "+ entityClass.getSimpleName() +" t");
+            return query.getSingleResult();
+        });
+    }
+
+    public Long countBy(String column, Object value) {
+        return (Long) execQuery(em -> {
+            Query query = em.createQuery("SELECT COUNT(t) FROM "+ entityClass.getSimpleName() +" t WHERE t."+column+"=:"+column);
+            query.setParameter(column, value);
+            return query.getSingleResult();
         });
     }
 }

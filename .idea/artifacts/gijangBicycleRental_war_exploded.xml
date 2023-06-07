@@ -6,13 +6,14 @@
         <element id="directory" name="classes">
           <element id="module-output" name="gijangBicycleRental.main" />
           <element id="jpa-descriptors" facet="gijangBicycleRental.main/jpa/JPA" />
+          <element id="module-output" name="gijangBicycleRental" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Gradle: org.testng:testng:7.1.0" />
           <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.26" />
           <element id="library" level="project" name="Gradle: org.hibernate:hibernate-core:5.6.1.Final" />
           <element id="library" level="project" name="Gradle: org.projectlombok:lombok:1.18.16" />
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Gradle: com.beust:jcommander:1.72" />
           <element id="library" level="project" name="Gradle: com.google.inject:guice:no_aop:4.1.0" />
           <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.21" />

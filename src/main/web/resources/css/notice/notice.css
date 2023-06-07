@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+table.qna {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+table.qna_list {
+    margin: 100px auto;
+    width: 700px;
+    border-collapse: collapse;
+}
+
+table.qna_list td, table.qna_list th {
+    padding: 10px;
+    text-align: center;
+}
+
+table.qna_list th.title {
+    width: 300px;
+}
+
+table.qna_list th.date {
+    width: 180px;
+}
+
+.qna_title_container {
+    width: 400px;
+    height: 30px;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+.qna_content_container {
+    width: 400px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.answer_container {
+    width: 400px;
+    height: 120px;
+    border: 1px solid black;
+}
+
+/*div.answer_container {*/
+/*    display: none;*/
+/*}*/
+
+/*textarea.answer_container, input.button {*/
+/*    display: none;*/
+/*}*/
+
+input.button {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+}
