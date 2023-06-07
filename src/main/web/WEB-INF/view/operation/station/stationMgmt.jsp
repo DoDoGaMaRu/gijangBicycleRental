@@ -69,7 +69,20 @@
                         </table>
                     </div>
                     <div class="page_btn_wrap">
+                        <%
+                            Integer curPage = (Integer) request.getAttribute("curPage");
+                            Integer maxPage = (Integer) request.getAttribute("maxPage");
 
+                            int pageStart = curPage/10 + 1;
+
+                            for (int i = pageStart; i<pageStart+10 && i<=maxPage; i++) {
+                                String pageBtnClass = " class='page_btn "+(curPage.equals(i) ? "cur_page":"")+"'";
+                                String pageBtnAtt = " style='cursor:hand' onclick=\"location.href='stationMgmt.do?page="+i+"'\"";
+                                out.print("<div"+ pageBtnClass + pageBtnAtt +">");
+                                out.print(i);
+                                out.print("</div>");
+                            }
+                        %>
                     </div>
                 </div>
                 <div class="cont_bottom">
