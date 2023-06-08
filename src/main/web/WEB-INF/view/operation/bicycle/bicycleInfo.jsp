@@ -1,4 +1,4 @@
-<%--
+<%@ page import="persistence.entity.Bicycle" %><%--
   Created by IntelliJ IDEA.
   User: DaeHwan
   Date: 2023-06-02
@@ -11,7 +11,8 @@
 <c:set var="view_path" value="${pageContext.request.contextPath}/../WEB-INF/view"/>
 <%
     request.setCharacterEncoding("UTF-8");
-    String title = "자전거 조회";
+    String title = "자전거 정보";
+    Bicycle bicycle = (Bicycle) request.getAttribute("bicycle");
 %>
 
 <html>
@@ -19,7 +20,8 @@
     <title><%=title%></title>
 
     <link rel="stylesheet" href="${resources_path}/css/common.css">
-    <link rel="stylesheet" href="${resources_path}/css/operation/bicycle/bicycleInfo.css">
+    <link rel="stylesheet" href="${resources_path}/css/operation/station/bicycleInfo.css">
+    <link rel="stylesheet" href="${resources_path}/css/operation/station/stationInfoTable.css">
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=35cc06d0fff9be7acbcab450ef07af23"></script>
     <script defer type="text/javascript" src="${resources_path}/js/map.js"></script>
@@ -31,31 +33,38 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <form action="info.do" method="post">
-                <table>
-
+            <div class="main_cont">
+                <table class="info_table">
                     <tr>
-                        <td>일련 번호</td>
-                        <td>input</td>
-                        <td colspan="2" rowpan="2"  class="cordinate">좌표맵 </td>
+                        <td class="row_name">자전거 번호</td>
+                        <td>
+                            <p class="row_text"><% out.print(bicycle.getId()); %></p>
+                        </td>
                     </tr>
                     <tr>
-                        <td> 대여 상태</td>
-                        <td> input </td>
+                        <td class="row_name">대여 상태</td>
+                        <td>
+                            <p id="rent" class="row_text"><% out.print( bicycle.getStation()==null ? "대여 중 " : "대여 가능"); %></p>
+                        </td>
                     </tr>
                     <tr>
-                        <td> 처리 이력</td>
-                        <td> input</td>
-                        <td> 좌표 </td>
-                        <td> input</td>
+                        <td class="row_name">처리 이력</td>
+                        <td>
+                            <p class="processing_history"><% out.print(bicycle.getState()); %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="btn_wrap">
+                            <button class="table_btn" onclick="history.back();">뒤로</button>
+                            <button class="table_btn" onclick="">수정</button>
+                            <button class="table_btn" onclick="">삭제</button>
+                        </td>
                     </tr>
                 </table>
-                <a class="cansle_but" href="../bicycleMgmt.do">돌아가기</a>
-            </form>
-
+            </div>
         </div>
     </div>
-</main>
 <jsp:include page="${view_path}/fragment/footer.jsp" />
 </body>
 </html>

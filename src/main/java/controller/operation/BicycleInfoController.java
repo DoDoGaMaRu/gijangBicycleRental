@@ -15,17 +15,14 @@ import java.io.IOException;
 
 public class BicycleInfoController implements Controller {
     private final BicycleDAO bicycleDAO = BicycleDAO.getInstance();
-    private final StationDAO stationDAO = StationDAO.getInstance();
-
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        if (req.getMethod().equals("GET")) {
-            HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleInfo.jsp");
-        }
-        else if (req.getMethod().equals("GET")) {
-            //registOK(req, res);
-        }
+
+        Long id = Long.valueOf(req.getParameter("id"));
+        req.setAttribute("bicycle", bicycleDAO.findByKey(id));
+
+        HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleInfo.jsp");
     }
 
     /*

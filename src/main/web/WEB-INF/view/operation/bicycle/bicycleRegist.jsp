@@ -17,8 +17,10 @@
 <html>
 <head>
     <title><%=title%></title>
+    <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
     <link rel="stylesheet" href="${resources_path}/css/operation/bicycle/bicycleRegist.css">
+    <link rel="stylesheet" href="${resources_path}/css/operation/station/stationInfoTable.css">
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=35cc06d0fff9be7acbcab450ef07af23"></script>
     <script defer type="text/javascript" src="${resources_path}/js/map.js"></script>
@@ -30,30 +32,31 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <form action="regist.do" method="post">
-                <table>
-                    <tr>
-                        <td>대여소 이름</td>
-                        <td>
-                            <input id="station" type="text" name="station">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>처리 이력</td>
-                        <td>
-                            <input id="state" type="text" name="state">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" value="확인">
-                        </td>
-                        <td>
-                            <input class="button" type="button" value="취소" onclick="window.location.href='../bicycleMgmt.do'">
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            <div class="main_cont">
+                <form class="regist_form" action="regist.do" method="post">
+                    <table class="info_table">
+                        <tr>
+                            <td class="row_name">대여소 번호</td>
+                            <td>
+                                <input class="row_text" type="text" name="station_id" required="required">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="row_name">처리 이력</td>
+                            <td>
+                                <input class="row_text" id="coordinate" type="text" name="state" required="required">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="btn_wrap">
+                                <input class="table_btn" type="button" onclick="history.back();" value="취소" />
+                                <input class="table_btn" type="submit" value="확인" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
     </div>
 </main>
