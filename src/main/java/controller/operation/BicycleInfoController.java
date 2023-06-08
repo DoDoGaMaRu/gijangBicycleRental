@@ -20,7 +20,8 @@ public class BicycleInfoController implements Controller {
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         Long id = Long.valueOf(req.getParameter("id"));
-        req.setAttribute("bicycle", bicycleDAO.findByKey(id));
+        Bicycle bicycle = bicycleDAO.findByKey(id);
+        req.setAttribute("bicycle", bicycle);
 
         HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleInfo.jsp");
     }
