@@ -15,6 +15,7 @@ import java.io.IOException;
 
 public class BicycleInfoController implements Controller {
     private final BicycleDAO bicycleDAO = BicycleDAO.getInstance();
+    private final StationDAO stationDAO = StationDAO.getInstance();
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -22,7 +23,6 @@ public class BicycleInfoController implements Controller {
         Long id = Long.valueOf(req.getParameter("id"));
         Bicycle bicycle = bicycleDAO.findByKey(id);
         req.setAttribute("bicycle", bicycle);
-
         HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleInfo.jsp");
     }
 
