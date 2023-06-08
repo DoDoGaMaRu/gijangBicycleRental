@@ -1,5 +1,5 @@
-.info_table { margin: 0 auto; }
-.info_table .row_name {font-family: SCDream3; font-size: 20px;}
+.info_table { margin: 0 auto; margin-top: 1rem; line-height: 50px}
+.info_table .row_name {font-family: SCDream3; font-size: 24px;}
 .info_table .row_text { border: black solid 1px; font-size: 16px; padding-left: 10px; box-sizing: border-box; width: 350px; height: 30px; font-family: SCDream3;}
 .info_table .btn_wrap {display: flex; padding-top: 15px; justify-content: space-between; }
 .info_table .btn_wrap .table_btn { width: 49%; box-sizing: border-box; border: black solid 1px; font-family: SCDream3; font-size: 20px; margin: 0 auto; }

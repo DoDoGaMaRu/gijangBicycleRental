@@ -24,6 +24,6 @@ public class UserInfoController implements Controller {
 
         req.setAttribute("user", userDAO.findByKey(serial));
         HttpUtil.forward(req, res, "/WEB-INF/view/user/userInfo.jsp");
-        // Todo 상시 시리얼 받아오도록 수정
+        // Todo 시리얼 입력 받고 해당하는 회원 정보 출력 하도록 바꿨음 확인 부탁
     }
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 
 public class UserRegistController implements Controller {
@@ -28,8 +29,12 @@ public class UserRegistController implements Controller {
 
     private void registOK(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
+        res.setContentType("text/html; charset=utf-8");
+
         String birthDateStr = req.getParameter("birthDate");
         LocalDate birthDate = null;
+
+        List<User> users = userDAO.findAllBy("id", req.getParameter("id"));
 
         birthDate = LocalDate.parse(birthDateStr, DateTimeFormatter.ISO_DATE);
 
@@ -42,12 +47,26 @@ public class UserRegistController implements Controller {
                 .address(req.getParameter("address"))
                 .phone(req.getParameter("phone"))
                 .build();
+
+        String duplicatecAlertMessage;
+
+        if(users.size() == 0) {
+            duplicatecAlertMessage = "사용 가능한 아이디입니다.";
+            res.getWriter().printf("<script>alert('%s'); </script>", duplicatecAlertMessage);
+        }
+        else {
+            duplicatecAlertMessage = "사용 중인 아이디입니다.";
+            res.getWriter().printf("<script>alert('%s'); </script>", duplicatecAlertMessage);
+            user = null;
+        }
+
         String userAlertMessage = (userDAO.create(user) != null) ? "회원가입이 완료되었습니다.":"회원가입에 실패했습니다.";
         String userRedirectPath = "/gijangBicycleRental/user.do";
 
-        res.setContentType("text/html; charset=utf-8");
         res.getWriter().printf("<script>alert('%s'); </script>", userAlertMessage);
         res.getWriter().printf("<script>location.href='%s';</script>", userRedirectPath);
         res.getWriter().flush();
+
+        HttpUtil.forward(req, res, "/WEB-INF/view/user/user.jsp");
     }
 }

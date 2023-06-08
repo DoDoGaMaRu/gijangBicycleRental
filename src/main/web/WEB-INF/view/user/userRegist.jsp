@@ -17,7 +17,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -32,7 +31,6 @@
                         <tr>
                             <td class="row_name">아이디</td>
                             <td><input class="row_text" type="text" name="id" required="required"></td>
-                            <td><button type="button" onclick="checkDuplicateId()">아이디 중복 확인</button></td>
                         </tr>
                         <tr>
                             <td class="row_name">비밀번호</td>
@@ -44,7 +42,7 @@
                         </tr>
                         <tr>
                             <td class="row_name">이메일</td>
-                            <td><input class="row_text" type="text" name="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></td>
+                            <td><input class="row_text" type="email" name="email" required="required"></td>
                         </tr>
                         <tr>
                             <td class="row_name">생년월일</td>

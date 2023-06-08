@@ -30,8 +30,7 @@
                     <table class="info_table">
                         <tr>
                             <td class="row_name">아이디</td>
-                            <td><input class="row_text" type="text" name="id" required="required"></td>
-                            <td><button type="button" onclick="checkDuplicateId()">아이디 중복 확인</button></td>
+                            <td><input class="row_text" type="text" id="id" name="id" required="required"></td>
                         </tr>
                         <tr>
                             <td class="row_name">비밀번호</td>
@@ -43,7 +42,7 @@
                         </tr>
                         <tr>
                             <td class="row_name">이메일</td>
-                            <td><input class="row_text" type="text" name="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></td>
+                            <td><input class="row_text" type="email" name="email" required="required"></td>
                         </tr>
                         <tr>
                             <td class="row_name">생년월일</td>

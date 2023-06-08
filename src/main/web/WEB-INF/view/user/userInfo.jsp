@@ -26,7 +26,13 @@
     <div class="container">
         <div class="cont_box">
             <div class="main_cont">
+                <form action="./userInfo.do" method="GET">
+                    <label for="serial">회원 시리얼:</label>
+                    <input type="text" id="serial" name="serial">
+                    <button type="submit">조회</button>
+                </form>
                 <table class="info_table">
+                    <% if (user != null) { %>
                     <tr>
                         <td class="row_name">아이디</td>
                         <td>
@@ -63,8 +69,15 @@
                             <p class="row_text"><% out.print(user.getPhone()); %></p>
                         </td>
                     </tr>
+                    <% if (user.getParentPhone() != null) { %>
                     <tr>
+                        <td class="row_name">보호자 전화번호</td>
+                        <td>
+                            <p class="row_text"><% out.print(user.getParentPhone()); %></p>
+                        </td>
                     </tr>
+                    <% } %>
+                    <% } %>
                 </table>
             </div>
         </div>
