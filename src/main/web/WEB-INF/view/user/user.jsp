@@ -22,6 +22,9 @@
     <div class="container">
         <div class="cont_box">
             <div class="centered_links">
+                <a href="main.do">
+                    <span class="row_name">뒤로 가기</span>
+                </a>
                 <a href="user/registMgmt.do">
                     <span class="row_name">회원 가입</span>
                 </a>

@@ -59,6 +59,7 @@
                         <tr>
                             <td></td>
                             <td class="btn_wrap">
+                                <input class="table_btn" type="button" onclick="window.location.href='http://localhost:8080/gijangBicycleRental/user/registMgmt.do';" value="뒤로가기" />
                                 <input class="table_btn" type="submit" value="가입하기" />
                             </td>
                         </tr>

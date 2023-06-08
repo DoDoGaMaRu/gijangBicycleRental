@@ -22,6 +22,9 @@
     <div class="container">
         <div class="cont_box">
             <div class="centered_links">
+                <a href="http://localhost:8080/gijangBicycleRental/user.do">
+                    <span class="row_name">뒤로 가기</span>
+                </a>
                 <a href="registMgmt/regist.do">
                     <span class="row_name">일반 회원가입</span>
                 </a>

@@ -61,8 +61,9 @@
                             <td><input class="row_text" type="text" name="parentPhone" required="required" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"></td>
                         </tr>
                         <tr>
-                            <td></td>
+                        <td></td>
                             <td class="btn_wrap">
+                                <input class="table_btn" type="button" onclick="window.location.href='http://localhost:8080/gijangBicycleRental/user/registMgmt.do';" value="뒤로가기" />
                                 <input class="table_btn" type="submit" value="가입하기" />
                             </td>
                         </tr>
