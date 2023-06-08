@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="${resources_path}/css/operation/bicycle/bicycleRegist.css">
     <link rel="stylesheet" href="${resources_path}/css/operation/bicycle/bicycleInfoTable.css">
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=35cc06d0fff9be7acbcab450ef07af23"></script>
+
     <script defer type="text/javascript" src="${resources_path}/js/map.js"></script>
 </head>
 <body>
