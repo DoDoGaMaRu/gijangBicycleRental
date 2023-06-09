@@ -2,6 +2,7 @@ package persistence.entity;
 
 import lombok.*;
 import javax.persistence.*;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 
 @Getter
