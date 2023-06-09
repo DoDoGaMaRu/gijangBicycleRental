@@ -1,4 +1,5 @@
-<%--
+<%@ page import="persistence.entity.Qna" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: DaeHwan
   Date: 2023-05-30
@@ -12,6 +13,8 @@
 <%
     request.setCharacterEncoding("UTF-8");
     String title = "QnA 조회";
+    Qna qna = (Qna) request.getAttribute("qna");
+    Qna answer = (Qna) request.getAttribute("answer");
 %>
 
 <html>
@@ -20,6 +23,9 @@
     <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
     <link rel="stylesheet" href="${resources_path}/css/notice/notice.css">
+    <style>
+
+    </style>
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -28,25 +34,50 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <table class="qna">
-                <tr>
-                    <td>Q/A</td>
-                    <td>
-                        <div class="qna_title_container"></div>
-                        <div class="qna_content_container"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Q/A 답변</td>
-                    <td>
-                        <form action="regist.do" method="post">
-                            <textarea class="answer_container" name="content"></textarea>
-                            <input class="button" type="submit" value="답변 등록">
-                        </form>
-                        <div class="answer_container"></div>
-                    </td>
-                </tr>
-            </table>
+            <form action="view.do?id=<%= qna.getId() %>" method="post">
+                <table class="qna">
+                    <tr>
+                        <td>Q/A</td>
+                        <td>
+                            <div class="qna_title_container">
+                                <%out.print(qna.getTitle());%>
+                            </div>
+                            <div class="qna_content_container">
+                                <%
+                                    out.print(qna.getInfo());
+                                %>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Q/A 답변</td>
+                        <td>
+                            <%
+                                if (answer != null && answer.getInfo() != null) {
+                            %>
+                                <div class="answer_container">
+                                    <%= answer.getInfo() %>
+                                </div>
+                            <%
+                            } else {
+                            %>
+                                <textarea class="answer_container" name="info"></textarea>
+                                <input class="button" type="submit" value="답변 등록">
+                            <%
+                                }
+                            %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <a class="button" href="../notice.do">목록</a>
+                            <a class="button">수정</a>
+                            <a class="button">삭제</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
 </main>
