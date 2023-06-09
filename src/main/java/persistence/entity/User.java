@@ -22,6 +22,17 @@ public class User {
     private String address;
     private String parentPhone;
 
+    public void User(String id, String pw, LocalDate birthDate, String name, String phone, String email, String address, String parentPhone) {
+        this.id = id;
+        this.pw = pw;
+        this.birthDate = birthDate;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.parentPhone = parentPhone;
+    }
+
     public void updateUser(String pw, String name, String phone, String email, String address, String parentPhone) {
         this.pw = pw;
         this.name = name;
