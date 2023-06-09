@@ -88,6 +88,9 @@
                     </div>
                 </div>
                 <div class="cont_bottom">
+                    <div class="back_btn" style='cursor:hand' onclick="location.href='../operation.do'">
+                        뒤로
+                    </div>
                     <div class="regist_btn" style='cursor:hand' onclick="location.href='stationMgmt/regist.do'">
                         등록
                     </div>

@@ -32,6 +32,8 @@
 
 
 /* Cont_bottom */
+.cont_bottom .back_btn {float: left; width: 100px; box-sizing: border-box; border: black solid 1px; text-align: center; font-family: SCDream3; font-size: 20px;}
+.cont_bottom .back_btn:hover {background-color: #19288CFF; color: white;}
 .cont_bottom .regist_btn {float: right; width: 100px; box-sizing: border-box; border: black solid 1px; text-align: center; font-family: SCDream3; font-size: 20px;}
 .cont_bottom .regist_btn:hover {background-color: #19288CFF; color: white;}
 
