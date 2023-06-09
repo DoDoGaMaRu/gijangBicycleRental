@@ -1,4 +1,5 @@
-<%--
+<%@ page import="persistence.entity.Qna" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: DaeHwan
   Date: 2023-05-30
@@ -12,6 +13,8 @@
 <%
     request.setCharacterEncoding("UTF-8");
     String title = "공지 관리";
+    final int MAX_OF_LIST = 8;
+    List<Qna> qnas = (List<Qna>)request.getAttribute("qnas");
 %>
 
 <html>
@@ -29,27 +32,38 @@
     <div class="container">
         <div class="cont_box">
             <a href="notice/view.do">
+            </a>
             <table class="qna_list" border="1">
+                <thead>
                 <tr>
                     <th>번호</th>
                     <th class="title">제목</th>
                     <th>작성자</th>
                     <th class="date">게시일</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>질문합니다.</td>
-                    <td>홍길동</td>
-                    <td>2023.05.18 08:12:05</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>또 질문합니다.</td>
-                    <td>홍길동</td>
-                    <td>2023.05.18 08:12:05</td>
-                </tr>
+                </thead>
+                <tbody>
+                <%
+                    Qna q = null;
+                    String infoAtt;
+                    for(int i = 0; i < MAX_OF_LIST; i++) {
+                        if (i < qnas.size()) {
+                            q = qnas.get(i);
+                            infoAtt = "style='cursor:hand' onclick=\"location.href='notice/view.do?id="+q.getId()+"'\"";
+                        } else {
+                            infoAtt = "";
+                            q = null;
+                        }
+                        out.print("<tr " + infoAtt + ">");
+                        out.print("<td>" + (q == null ? "" : q.getId()) + "</td>");
+                        out.print("<td>" + (q == null ? "" : q.getTitle()) + "</td>");
+                        out.print("<td>" + (q == null ? "" : q.getUser().getName()) + "</td>");
+                        out.print("<td>" + (q == null ? "" : q.getRegdate()) + "</td>");
+                        out.print("</tr>");
+                    }
+                %>
+                </tbody>
             </table>
-            </a>
         </div>
     </div>
 </main>
