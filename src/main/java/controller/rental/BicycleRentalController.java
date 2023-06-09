@@ -1,19 +1,16 @@
-package controller.notice;
+package controller.rental;
 
 import controller.Controller;
 import controller.HttpUtil;
-import persistence.dao.QnaDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class NoticeController implements Controller {
-    private final QnaDAO qnaDAO = QnaDAO.getInstance();
+public class BicycleRentalController implements Controller {
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        req.setAttribute("qnas", qnaDAO.findAllByQuestionIdIsNull());
-        HttpUtil.forward(req, res, "/WEB-INF/view/notice/notice.jsp");
+        HttpUtil.forward(req, res, "/WEB-INF/view/rental/bicycleRental.jsp");
     }
 }

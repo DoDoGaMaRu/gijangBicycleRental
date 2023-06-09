@@ -7,6 +7,7 @@ import controller.rental.*;
 import controller.user.*;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 
 import javax.servlet.ServletConfig;
@@ -43,6 +44,8 @@ public class FrontController extends HttpServlet {
         list.put("/operation/stationMgmt/regist.do", new StationRegistController());
         list.put("/operation/stationMgmt/info.do", new StationInfoController());
         list.put("/rental.do", new RentalController());
+        list.put("/rental/rental.do", new BicycleRentalController());
+        list.put("/rental/state.do", new RentalStateController());
         list.put("/user.do", new UserController());
         list.put("/user/registMgmt.do", new UserRegistMgmtController());
         list.put("/user/registMgmt/regist.do", new UserRegistController());

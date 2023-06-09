@@ -1,19 +1,14 @@
-.centered_link {
-    text-align: center;
-}
+.centered_links { display: flex; justify-content: center; }
 
-.row_name {
-    margin: 0 auto;
-}
+.centered_links a { position: relative; padding: 0 10px; text-decoration: none; color: #000; }
 
-a {
-    text-align: center;
-    font-family: SCDream3;
-}
+.centered_links a:not(:last-child)::after { content: ''; position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: 1px; height: 70%; background-color: #000; }
+
+.row_name { text-align: center; font-size: 24px; }
+
+a { text-align: center; font-family: "SCDream3", sans-serif; }
 
 @font-face {
     font-family: "SCDream3";
     src: url("../../font/SCDream/SCDream3.otf");
 }
-
-/* Todo 가운데 정렬 */

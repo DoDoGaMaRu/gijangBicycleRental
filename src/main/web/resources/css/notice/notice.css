@@ -7,8 +7,8 @@ table.qna {
 }
 
 table.qna_list {
-    margin: 100px auto;
-    width: 700px;
+    margin: 60px auto;
+    width: 800px;
     border-collapse: collapse;
 }
 
@@ -17,15 +17,37 @@ table.qna_list td, table.qna_list th {
     text-align: center;
 }
 
+table.qna_list thead th {
+    font-size: 16px;
+}
+
+table.qna_list tbody td {
+    font-size: 16px;
+}
+
 table.qna_list th.title {
-    width: 300px;
+    width: 350px;
 }
 
 table.qna_list th.date {
-    width: 180px;
+    width: 190px;
 }
 
+table.qna_list tr {
+    height: 40px;
+}
+
+table.qna thead th {
+    font-size: 16px;
+}
+
+table.qna tbody td {
+    font-size: 16px;
+}
+
+
 .qna_title_container {
+    font-weight: bold;
     width: 400px;
     height: 30px;
     border: 1px solid black;
@@ -56,4 +78,14 @@ input.button {
     width: 100px;
     height: 30px;
     margin-left: 10px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+a.button {
+    margin-left: 20px;
+    padding: 10px 40px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 30px;
 }

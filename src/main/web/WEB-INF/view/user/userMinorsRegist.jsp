@@ -17,7 +17,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-    <script defer type="text/javascript" src="${resources_path}/js/cal.js"></script>
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -27,12 +26,11 @@
     <div class="container">
         <div class="cont_box">
             <div class="main_cont">
-                <form class="regist_form" action="regist.do" method="post">
+                <form class="regist_form" action="minorsRegist.do" method="post">
                     <table class="info_table">
                         <tr>
                             <td class="row_name">아이디</td>
-                            <td><input class="row_text" type="text" name="id" required="required"></td>
-                            <td><button type="button" onclick="checkDuplicateId()">아이디 중복 확인</button></td>
+                            <td><input class="row_text" type="text" id="id" name="id" required="required"></td>
                         </tr>
                         <tr>
                             <td class="row_name">비밀번호</td>
@@ -44,11 +42,11 @@
                         </tr>
                         <tr>
                             <td class="row_name">이메일</td>
-                            <td><input class="row_text" type="text" name="email" required="required"></td>
+                            <td><input class="row_text" type="email" name="email" required="required"></td>
                         </tr>
                         <tr>
                             <td class="row_name">생년월일</td>
-                            <td><input class="row_text" id="birthDate" name="birthDate" required="required" readonly></td>
+                            <td><label><input type="date" class="row_text" name="birthDate" required></label></td>
                         </tr>
                         <tr>
                             <td class="row_name">주소</td>
@@ -56,17 +54,16 @@
                         </tr>
                         <tr>
                             <td class="row_name">전화번호</td>
-                            <td><input class="row_text" type="text" name="phoneNumber" required="required"></td>
-                            <%-- Todo 본인인증 만들어야 하나...? 일단 놔둠 --%>
+                            <td><input class="row_text" type="text" name="phone" required="required" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"></td>
                         </tr>
                         <tr>
                             <td class="row_name">보호자 전화번호</td>
-                            <td><input class="row_text" type="text" name="parentPhoneNumber" required="required"></td>
-                            <%-- Todo 본인인증 만들어야 하나...? 일단 놔둠 --%>
+                            <td><input class="row_text" type="text" name="parentPhone" required="required" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"></td>
                         </tr>
                         <tr>
-                            <td></td>
+                        <td></td>
                             <td class="btn_wrap">
+                                <input class="table_btn" type="button" onclick="window.location.href='http://localhost:8080/gijangBicycleRental/user/registMgmt.do';" value="뒤로가기" />
                                 <input class="table_btn" type="submit" value="가입하기" />
                             </td>
                         </tr>

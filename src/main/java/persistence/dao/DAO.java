@@ -53,6 +53,14 @@ public abstract class DAO<T, K> {
         });
     }
 
+    public T findBy(String column, Object value) {
+        return (T) execQuery(em -> {
+            Query query = em.createQuery("SELECT t FROM "+ entityClass.getSimpleName() +" t WHERE t."+column+"=:"+column);
+            query.setParameter(column, value);
+            return query.getSingleResult();
+        });
+    }
+
     public List<T> findAllByKey(Iterable<K> keys) {
         return (List<T>) execQuery(em -> {
             List<T> res = new ArrayList<>();

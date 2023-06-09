@@ -1,40 +1,5 @@
-#map {width: 350px; height: 350px;}
-*{
-    font-weight: bold;
-    font-size: 22px;
-}
-.cont_box form{
-    height: 450px;
-    padding: 20px;
-    margin: 0 auto;
-    width: 900px;
-}
+/* Info Table */
+.info_table .row_text {border: black solid 1px; font-size: 16px; padding-left: 10px;}
+.info_table {border-collapse: separate; /* 셀(cell) 경계를 분리합니다. */border-spacing: 0 20px; /* 원하는 간격 크기를 지정합니다. */}
 
-form table{
-    position: relative;
-    max-height: 450px;
-    width: 900px;
-
-    border-collapse : collapse;
-}
-
-form{
-    justify-content: center;
-}
-form table tr{
-    height: 150px;
-}
-form table td{
-    width: 100px;
-}
-
-form table td{
-    max-height: 50px;
-    border-collapse : collapse;
-    text-align: center;
-}
-
-
-form table td input{
-    width: 300px;
-}
+.info_table .btn_wrap .table_btn {width: 49%;}
