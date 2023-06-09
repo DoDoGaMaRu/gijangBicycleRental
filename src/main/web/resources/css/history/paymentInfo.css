@@ -15,19 +15,11 @@
     float: right;
 }
 
-/* 결제 정보 */
-.payment_details {
-    display: flex;
-    padding: 10px 0;
-    border-bottom: rgb(25, 40, 140) solid 2px;
-}
-.detail {
-    flex: 1;
+table {
+    font-family: SCDream3;
+    overflow: auto;
     text-align: center;
-    border-right: rgb(25, 40, 140) solid 2px;
-}
-.detail:nth-child(4) {
-    border: 0;
+    border: solid black 1px;
 }
 
 /*조회 결과 박스*/
