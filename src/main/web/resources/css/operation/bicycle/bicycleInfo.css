@@ -1,49 +1,13 @@
-#map {width: 350px; height: 350px;}
-*{
-    font-weight: bold;
-    font-size: 22px;
-}
-.cont_box form{
-    height: 450px;
-    padding: 20px;
-    margin: 0 auto;
-    width: 900px;
-    position: relative;
-}
+/* Info Table */
+.info_table .row_name {padding-right: 10px;}
+.info_table .row_text {font-size: 20px;}
+.info_table .btn_wrap .table_btn {width: 100%;}
 
-form table{
-    position: relative;
-    max-height: 450px;
-    width: 900px;
-    border-collapse : collapse;
-}
-form table th{
-    max-width: 60px;
-}
-form table tr{
-    border: 100px solid white;
-}
-form table td{
-    max-width: 50px;
-    height : 60px;
-    border-collapse : collapse;
-    text-align: center;
-}
-form table td:nth-child(1){
-    max-width: 20px;
-    text-align: center;
-}
-.regist_but{
-    position: absolute;
-    top: 500px;
-    right: 0;
-}
-.cansle_but{
-    position: absolute;
-    width: 150px;
-    left: 50%;
-    top: 100%;
-    text-align: center;
-    border : 1px solid black;
-    text-decoration: none;
-}
+/*cont bottom*/
+.cont_bottom {height: 15%; display: flex; align-items: center; justify-content: center}
+.cont_bottom .back_btn { width: 100px; box-sizing: border-box; border: black solid 1px; text-align: center; font-family: SCDream3; font-size: 20px;}
+.cont_bottom .back_btn:hover {background-color: #19288CFF; color: white;}
+.cont_bottom .udpate_btn {margin: 0 10px 0 10px; width: 100px; box-sizing: border-box; border: black solid 1px; text-align: center; font-family: SCDream3; font-size: 20px;}
+.cont_bottom .udpate_btn:hover {background-color: #19288CFF; color: white;}
+.cont_bottom .delete_btn { width: 100px; box-sizing: border-box; border: black solid 1px; text-align: center; font-family: SCDream3; font-size: 20px;}
+.cont_bottom .delete_btn:hover {background-color: #19288CFF; color: white;}
