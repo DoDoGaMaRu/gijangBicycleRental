@@ -13,6 +13,7 @@ public class NoticeController implements Controller {
     private final QnaDAO qnaDAO = QnaDAO.getInstance();
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        req.setAttribute("qnas", qnaDAO.findAllByQuestionIdIsNull());
         HttpUtil.forward(req, res, "/WEB-INF/view/notice/notice.jsp");
     }
 }

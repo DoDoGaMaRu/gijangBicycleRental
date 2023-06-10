@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: DaeHwan
-  Date: 2023-05-30
-  Time: 오후 9:34
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="resources_path" value="${pageContext.request.contextPath}/resources"/>
@@ -28,12 +21,17 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <a href="user/registMgmt.do" class="centered_link">
-                <span class="row_name">회원 가입</span>
-            </a>
-            <a href="user/userInfo.do" class="centered_link">
-                <span class="row_name">회원 정보 조회</span>
-            </a>
+            <div class="centered_links">
+                <a href="main.do">
+                    <span class="row_name">뒤로 가기</span>
+                </a>
+                <a href="user/registMgmt.do">
+                    <span class="row_name">회원 가입</span>
+                </a>
+                <a href="user/userInfo.do">
+                    <span class="row_name">회원 정보 조회</span>
+                </a>
+            </div>
         </div>
     </div>
 </main>

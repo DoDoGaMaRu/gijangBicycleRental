@@ -29,15 +29,22 @@ public class BicycleRegistController implements Controller {
     }
 
     private void registOK(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Long stationId = Long.parseLong(req.getParameter("stationId"));
-       // Station station = stationDAO.findById(stationId); // 기존의 Station을 가져오는 로직
+
+        String stationIdString = req.getParameter("station_id");
+        Long stationId = Long.parseLong(stationIdString);
+        Station station = stationDAO.findByKey(stationId);
 
         Bicycle bicycle = Bicycle.builder()
-                .id(Long.parseLong(req.getParameter("id")))
                 .state(req.getParameter("state"))
-               // .station(station)
+                .station(station)
                 .build();
-        bicycleDAO.create(bicycle);
+
+        String alertMessege = (bicycleDAO.create(bicycle) != null) ? "자전거 등록에 성공하였습니다.":"자전거 등록에 실패하였습니다.";
+        String redirectPath = "/gijangBicycleRental/operation/bicycleMgmt.do";
+        res.setContentType("text/html; charset=utf-8");
+        res.getWriter().printf("<script>alert('%s'); location.href='%s';</script>", alertMessege, redirectPath);
+        res.getWriter().flush();
+
 
         HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleMgmt.jsp");
     }

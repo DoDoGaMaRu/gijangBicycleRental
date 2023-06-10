@@ -1,50 +1,43 @@
-#map {width: 350px; height: 350px;}
-*{
-    font-weight: bold;
-    font-size: 22px;
-}
-.cont_box form{
-    height: 450px;
-    padding: 20px;
-    margin: 0 auto;
-    width: 900px;
-    position: relative;
-}
-form table{
+/* Cont Layout */
+.main_cont {width: 70%; margin: 0 auto;}
+.cont_top {height: 10%;}
+.cont_middle {height: 75%;}
+.cont_bottom {height: 15%;}
 
-    max-height: 450px;
-    width: 900px;
-    border : 1px solid black;
-    border-collapse : collapse;
-}
-form table th{
-    max-width: 60px;
-}
-form table td{
-    max-width: 50px;
-    border : 1px solid black;
-    border-collapse : collapse;
-    text-align: center;
-}
-form table td:nth-child(1){
-    max-width: 20px;
-    text-align: center;
-}
-.regist_but{
-    position: absolute;
-    width: 150px;
-    right: 0%;
-    top: 100%;
-    border : 1px solid black;
-    text-decoration: none;
-    text-align: center;
-}
-.cansle_but{
-    position: absolute;
-    width: 150px;
-    left: 0%;
-    top: 100%;
-    text-align: center;
-    border : 1px solid black;
-    text-decoration: none;
+
+/* Cont_top*/
+.cont_top .cont_title {padding: 15px; font-family: SCDream3; font-size: 20px;}
+
+/* Cont_middle */
+.cont_middle table {table-layout:fixed; width: 100%; border-collapse: collapse; border: #000000 solid 1px; font-family: SCDream3;}
+
+.cont_middle th:nth-child(1) {width: 100px}
+.cont_middle th:nth-child(2) {width: 250px}
+
+.cont_middle th {background-color: #eeeeee;}
+.cont_middle tr {height: 30px;}
+.cont_middle th,
+.cont_middle td {border: 1px solid #aaa; background-clip: padding-box; scroll-snap-align: start; word-break:break-all;}
+.cont_middle td {padding-left: 10px;}
+.cont_middle td:first-child {padding-left: 0; text-align: center;}
+.cont_middle thead {font-size: 18px;}
+.cont_middle tbody {font-size: 16px;}
+.cont_middle tbody tr:last-child th,
+.cont_middle tbody tr:last-child td {border-bottom: 0;}
+
+.cont_middle .page_btn_wrap {margin: 0 auto; padding-top: 10px; display: flex; justify-content: center; width: 260px;}
+.cont_middle .page_btn_wrap .page_btn {height: 20px; width: 20px; border: #000000 solid 1px; text-align: center; font-family: SCDream3; margin: 0 3px;}
+.cont_middle .page_btn_wrap .page_btn:hover {background-color: #19288CFF; color: white;}
+.cont_middle .page_btn_wrap .cur_page {background-color: #19288CFF; color: white;}
+
+
+/* Cont_bottom */
+.cont_bottom .regist_btn {float: right; width: 100px; box-sizing: border-box; border: black solid 1px; text-align: center; font-family: SCDream3; font-size: 20px;}
+.cont_bottom .regist_btn:hover {background-color: #19288CFF; color: white;}
+.cont_bottom .back_btn {float: left; width: 100px; box-sizing: border-box; border: black solid 1px; text-align: center; font-family: SCDream3; font-size: 20px;}
+.cont_bottom .back_btn:hover {background-color: #19288CFF; color: white;}
+/* font */
+@font-face {
+    font-family: "SCDream3";
+    src: url("../../../font/SCDream/SCDream3.otf");
 }

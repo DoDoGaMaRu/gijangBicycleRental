@@ -17,31 +17,12 @@ public class BicycleInfoController implements Controller {
     private final BicycleDAO bicycleDAO = BicycleDAO.getInstance();
     private final StationDAO stationDAO = StationDAO.getInstance();
 
-
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        if (req.getMethod().equals("GET")) {
-            HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleInfo.jsp");
-        }
-        else if (req.getMethod().equals("GET")) {
-            //registOK(req, res);
-        }
+
+        Long id = Long.valueOf(req.getParameter("id"));
+        Bicycle bicycle = bicycleDAO.findByKey(id);
+        req.setAttribute("bicycle", bicycle);
+        HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleInfo.jsp");
     }
-
-    /*
-    private void registOK(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Long stationId = Long.parseLong(req.getParameter("stationId"));
-        // Station station = stationDAO.findById(stationId); // 기존의 Station을 가져오는 로직
-
-        Bicycle bicycle = Bicycle.builder()
-                .id(Long.parseLong(req.getParameter("id")))
-                .state(req.getParameter("state"))
-                // .station(station)
-                .build();
-        bicycleDAO.create(bicycle);
-
-        HttpUtil.forward(req, res, "/WEB-INF/view/operation/bicycle/bicycleMgmt.jsp");
-    }
-    */
-
 }
