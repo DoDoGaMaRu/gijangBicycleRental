@@ -18,8 +18,10 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class BicycleRentalController implements Controller {
+    private PaymentDAO paymentDAO = PaymentDAO.getInstance();
     private RentalDAO rentalDAO = RentalDAO.getInstance();
     private BicycleDAO bicycleDAO = BicycleDAO.getInstance();
+    private UserDAO userDAO = UserDAO.getInstance();
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getMethod().equals("GET")) {
@@ -34,16 +36,30 @@ public class BicycleRentalController implements Controller {
         // startTime 현재시각으로 설정
         LocalDateTime startTime = LocalDateTime.now();
 
-        Bicycle bicycle_id = bicycleDAO.findByKey(Long.valueOf(req.getParameter("id")));
+        Long bicycle_id = Long.valueOf(req.getParameter("bicycle_id"));
+        Long user_serial = Long.valueOf(req.getParameter("user_serial"));
+
+        Bicycle bicycle = bicycleDAO.findByKey(bicycle_id);
+        User user = userDAO.findByKey(user_serial);
 
         // rental 객체 생성
         Rental rental = Rental.builder()
                 .startTime(startTime)
-                .bicycle(bicycle_id)
+                .bicycle(bicycle)
                 .build();
-        rentalDAO.create(rental);
+        rental = rentalDAO.create(rental);
 
-        String alertMessage = (rentalDAO.create(rental) != null) ? "자전거 대여 완료" : "자전거 대여 불가능";
+        Payment payment = Payment.builder()
+                .regdate(LocalDateTime.now())
+                .amount(1000)
+                .paymentMethod("삼성페이")
+                .state("결제완료")
+                .user(user)
+                .rental(rental)
+                .build();
+        payment = paymentDAO.create(payment);
+
+        String alertMessage = (rental != null) ? "자전거 대여 완료" : "자전거 대여 불가능";
         String redirectPath = "/gijangBicycleRental/rental/rental.do";
 
         res.setContentType("text/html; charset=utf-8");
