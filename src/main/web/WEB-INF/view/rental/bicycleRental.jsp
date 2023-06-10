@@ -28,12 +28,11 @@
 <main>
     <div class="container">
         <div class="cont_box">
-            <form action="rental/rentalOK.do" method="post">
-.
+            <form class="rental_form" action="rental.do" method="post">
 
                 <h1>자전거 ID 입력</h1>
 
-                <input type="text"><br>
+                <input type="text" name="id" required="required"><br>
 
                 <button type="submit">자전거 대여하기</button>
 
