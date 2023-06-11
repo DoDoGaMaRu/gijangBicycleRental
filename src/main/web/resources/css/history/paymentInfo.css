@@ -1,25 +1,54 @@
-.cont_box{
+.cont_box {
+    position: relative;
     font-family: SCDream3;
     font-size: 25px;
 }
 /* 조회바 */
-.inquiry_bar{
-    padding: 20px 60px;
+.inquiry_bar {
+    padding: 20px 40px;
     border-bottom: rgb(25, 40, 140) solid 2px;
 }
 .date_range{
     font-family: SCDream3;
     font-size: 22px;
 }
-.id {
+.serial {
     float: right;
 }
+.input_serial {
+    float: right;
+    font-family: SCDream3;
+    font-size: 22px;
+}
 
+
+/* 테이블 */
 table {
     font-family: SCDream3;
+    font-size: 25px;
+    border-collapse: collapse;
+    width: 1136px;
+    margin-left: auto;
+    margin-right: auto;
     overflow: auto;
     text-align: center;
-    border: solid black 1px;
+}
+tbody {
+    border: rgb(25, 40, 140) solid 2px;
+}
+
+th {
+    border: rgb(25, 40, 140) solid 2px;
+    border-top: 0;
+}
+tr {
+    border: rgb(25, 40, 140) dashed 1px;
+}
+tr:first-child {
+    border-top: 0;
+}
+td {
+    border-right: rgb(25, 40, 140) dashed 1px;
 }
 
 /*조회 결과 박스*/
@@ -44,12 +73,20 @@ table {
 
 /* 조회 버튼 */
 .btnBox {
+    position: absolute;
+    bottom: 0;
     padding: 10px 0;
+    width: 1136px;
     text-align: center;
-    border-top: rgb(25, 40, 140) solid 2px;
 }
 .inquiry_Btn {
     font-family: SCDream3;
     font-size: 20px;
     padding: 0 15px;
+}
+
+/* 폰트 */
+@font-face {
+    font-family: "SCDream3";
+    src: url("../../font/SCDream/SCDream3.otf");
 }

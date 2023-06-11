@@ -1,21 +1,53 @@
 .cont_box {
+    position: relative;
     font-family: SCDream3;
     font-size: 25px;
 }
 /* 조회바 */
 .inquiry_bar {
-    padding: 20px 60px;
+    padding: 20px 40px;
     border-bottom: rgb(25, 40, 140) solid 2px;
 }
-.input_bicycleNum {
+.input_bicycleId {
     font-family: SCDream3;
     font-size: 22px;
+}
+.bicycle_state {
+    margin-left: 20px;
 }
 .select_bicycleState {
     font-family: SCDream3;
     font-size: 22px;
     padding: 2px 10px;
-    margin-left: 30px;
+}
+
+/* 테이블 */
+table {
+    font-family: SCDream3;
+    font-size: 25px;
+    border-collapse: collapse;
+    width: 1136px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    text-align: center;
+}
+tbody {
+    border: rgb(25, 40, 140) solid 2px;
+}
+
+th {
+    border: rgb(25, 40, 140) solid 2px;
+    border-top: 0;
+}
+tr {
+    border: rgb(25, 40, 140) dashed 1px;
+}
+tr:first-child {
+    border-top: 0;
+}
+td {
+    border-right: rgb(25, 40, 140) dashed 1px;
 }
 
 /* 자전거 정보 */
@@ -33,14 +65,14 @@
     border: 0;
 }
 
-/*조회 결과 박스*/
+/* 조회 결과 박스 */
 .bicycleResults {
     height: 330px;
     overflow: auto;
     padding: 10px 0;
     flex-direction: column;
 }
-.resultSet{
+.resultSet {
     display: flex;
     margin-bottom: 20px;
 }
@@ -55,12 +87,20 @@
 
 /* 조회 버튼 */
 .btnBox {
+    position: absolute;
+    bottom: 0;
     padding: 10px 0;
+    width: 1136px;
     text-align: center;
-    border-top: rgb(25, 40, 140) solid 2px;
 }
 .inquiry_Btn {
     font-family: SCDream3;
     font-size: 20px;
     padding: 0 15px;
+}
+
+/* 폰트 */
+@font-face {
+    font-family: "SCDream3";
+    src: url("../../font/SCDream/SCDream3.otf");
 }
