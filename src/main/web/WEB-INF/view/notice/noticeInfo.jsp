@@ -61,8 +61,8 @@
                             <%
                             } else {
                             %>
-                                <textarea class="answer_container" name="info"></textarea>
-                                <input class="button" type="submit" value="답변 등록">
+                                <textarea class="answer_container" name="info" required></textarea>
+                                <input class="button" type="submit" value="답변 등록" >
                             <%
                                 }
                             %>
