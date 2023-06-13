@@ -1,6 +1,5 @@
 <%@ page import="persistence.entity.Payment" %>
 <%@ page import="java.util.List" %>
-<%@ page import="persistence.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="resources_path" value="${pageContext.request.contextPath}/resources"/>
@@ -8,7 +7,7 @@
 <%
     request.setCharacterEncoding("UTF-8");
     String title = "결제 내역 조회";
-    User user = (User) request.getAttribute("user");
+
     List<Payment> payments = (List<Payment>) request.getAttribute("payments");
 %>
 
@@ -27,10 +26,9 @@
     <div class="container">
         <form class="cont_box">
             <div class="inquiry_bar">
-                <label>기간 <input type="date" class="date_range" required> ~ <input type="date" class="date_range" required></label>
-<%--                왜 안됨?--%>
-                <span class="id"><% out.print(user.getId()); %></span>
-                <span class="id" style="margin-right: 50px">아이디</span>
+                <label>기간 <input type="date" class="date_range" name="from" required> ~ <input type="date" class="date_range" name="to" required></label>
+                <input class="input_serial" type="text" name="serial" required>
+                <span class="serial" style="margin-right: 50px">회원 시리얼</span>
             </div>
             <table>
                 <thead>
@@ -43,17 +41,18 @@
                 </thead>
                 <tbody>
                 <%
-                    //전체 조회
-                    Payment p = null;
-                    for (int i=0; i < payments.size(); i++) {
-                        p = payments.get(i);
+                    if (payments.size() != 0){
+                        Payment p = null;
+                        for (int i=0; i < payments.size(); i++) {
+                            p = payments.get(i);
 
-                        out.print("<tr>");
-                        out.print("<td>"+(p==null ? "null":p.getId())+"</td>");
-                        out.print("<td>"+(p==null ? "null":p.getRegdate())+"</td>");
-                        out.print("<td>"+(p==null ? "null":p.getPaymentMethod())+"</td>");
-                        out.print("<td>"+(p==null ? "null":p.getAmount())+"원</td>");
-                        out.print("</tr>");
+                            out.print("<tr>");
+                            out.print("<td>"+(p==null ? "null":p.getId())+"</td>");
+                            out.print("<td>"+(p==null ? "null":p.getRegdate())+"</td>");
+                            out.print("<td>"+(p==null ? "null":p.getPaymentMethod())+"</td>");
+                            out.print("<td>"+(p==null ? "null":p.getAmount())+"원</td>");
+                            out.print("</tr>");
+                        }
                     }
                 %>
                 </tbody>
