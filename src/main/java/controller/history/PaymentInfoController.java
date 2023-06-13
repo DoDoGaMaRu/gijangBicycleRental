@@ -20,10 +20,10 @@ public class PaymentInfoController implements Controller {
 
         if (idParam != null && !idParam.isEmpty()) {
             serial = Long.valueOf(idParam);
+            req.setAttribute("user", userDAO.findByKey(serial));
+            req.setAttribute("payments", paymentDAO.findAll());
         }
 
-        req.setAttribute("user", userDAO.findByKey(serial));
-        req.setAttribute("payments", paymentDAO.findAll());
         HttpUtil.forward(req, res, "/WEB-INF/view/history/paymentInfo.jsp");
     }
 }
