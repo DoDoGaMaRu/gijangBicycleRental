@@ -2,10 +2,7 @@ package controller.rental;
 
 import controller.Controller;
 import controller.HttpUtil;
-import persistence.dao.BicycleDAO;
-import persistence.dao.PaymentDAO;
-import persistence.dao.RentalDAO;
-import persistence.dao.UserDAO;
+import persistence.dao.*;
 import persistence.entity.Bicycle;
 import persistence.entity.Payment;
 import persistence.entity.Rental;
@@ -22,6 +19,8 @@ public class BicycleRentalController implements Controller {
     private RentalDAO rentalDAO = RentalDAO.getInstance();
     private BicycleDAO bicycleDAO = BicycleDAO.getInstance();
     private UserDAO userDAO = UserDAO.getInstance();
+
+    private StationDAO stationDAO = StationDAO.getInstance();
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getMethod().equals("GET")) {
@@ -37,33 +36,45 @@ public class BicycleRentalController implements Controller {
         LocalDateTime startTime = LocalDateTime.now();
 
         Long bicycle_id = Long.valueOf(req.getParameter("bicycle_id"));
-        Long user_serial = Long.valueOf(req.getParameter("user_serial"));
+        String user_id = req.getParameter("user_id");
+        Rental rental = null;
 
         Bicycle bicycle = bicycleDAO.findByKey(bicycle_id);
-        User user = userDAO.findByKey(user_serial);
+        User user = userDAO.findBy("id", user_id);
 
-        // rental 객체 생성
-        Rental rental = Rental.builder()
-                .startTime(startTime)
-                .bicycle(bicycle)
-                .build();
-        rental = rentalDAO.create(rental);
+        if( bicycle.getStation() != null ) {
+            // rental 객체 생성
+            rental = Rental.builder()
+                    .startTime(startTime)
+                    .bicycle(bicycle)
+                    .build();
+            rental = rentalDAO.create(rental);
 
-        Payment payment = Payment.builder()
-                .regdate(LocalDateTime.now())
-                .amount(1000)
-                .paymentMethod("삼성페이")
-                .state("결제완료")
-                .user(user)
-                .rental(rental)
-                .build();
-        payment = paymentDAO.create(payment);
+            // payment 객체 생성
+            Payment payment = Payment.builder()
+                    .regdate(LocalDateTime.now())
+                    .amount(1000)
+                    .paymentMethod("삼성페이")
+                    .state("결제완료")
+                    .user(user)
+                    .rental(rental)
+                    .build();
+            payment = paymentDAO.create(payment);
 
-        String alertMessage = (rental != null) ? "자전거 대여 완료" : "자전거 대여 불가능";
-        String redirectPath = "/gijangBicycleRental/rental/rental.do";
+            //자전거 상태 업데이트
+            bicycle.updateStation(null);
+            bicycleDAO.update(bicycle);
 
-        res.setContentType("text/html; charset=utf-8");
-        res.getWriter().printf("<script>alert('%s'); location.href='%s';</script>", alertMessage, redirectPath);
-        res.getWriter().flush();
+
+            String alertMessage = (rental != null) ? "자전거 대여 성공" : "자전거 대여 실패";
+            String redirectPath = "/gijangBicycleRental/rental/rental.do";
+
+
+            res.setContentType("text/html; charset=utf-8");
+            res.getWriter().printf("<script>alert('%s'); location.href='%s';</script>", alertMessage, redirectPath);
+            res.getWriter().flush();
+
+            HttpUtil.forward(req, res, "/WEB-INF/view/rental/bicycleRental.jsp");
+        }
     }
 }
