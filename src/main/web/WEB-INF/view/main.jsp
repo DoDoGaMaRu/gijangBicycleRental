@@ -19,6 +19,7 @@
   <title><%=title%></title>
   <link rel="stylesheet" href="${resources_path}/css/reset.css">
   <link rel="stylesheet" href="${resources_path}/css/common.css">
+  <link rel="stylesheet" href="${resources_path}/css/main.css">
 </head>
 <body>
   <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -27,27 +28,50 @@
   <main>
     <div class="container">
       <div class="cont_box">
-
-        <button onclick="window.location.href='/gijangBicycleRental/user.do'">
-          회원 관리
-        </button>
-
-        <button onclick="window.location.href='/gijangBicycleRental/rental.do'">
-          대여 관리
-        </button>
-
-        <button onclick="window.location.href='/gijangBicycleRental/history.do'">
-          이력 관리
-        </button>
-
-        <button onclick="window.location.href='/gijangBicycleRental/notice.do'">
-          공지 관리
-        </button>
-
-        <button onclick="window.location.href='/gijangBicycleRental/operation.do'">
-          운영 관리
-        </button>
-
+        <div class="nav_wrap">
+          <div class="nav_col">
+            회원 관리
+            <button onclick="window.location.href='/gijangBicycleRental/user/registMgmt.do'">
+              회원 가입
+            </button>
+            <button onclick="window.location.href='/gijangBicycleRental/user/userInfo.do'">
+              회원 정보 조회
+            </button>
+          </div>
+          <div class="nav_col">
+            대여 관리
+            <button onclick="window.location.href='/gijangBicycleRental/rental/rental.do'">
+              자전거 대여
+            </button>
+            <button onclick="window.location.href='/gijangBicycleRental/rental/state.do'">
+              대여 현황 조회
+            </button>
+          </div>
+          <div class="nav_col">
+            이력 관리
+            <button onclick="window.location.href='/gijangBicycleRental/history/paymentInfo.do'">
+              결제 내역 조회
+            </button>
+            <button onclick="window.location.href='/gijangBicycleRental/history/bicycleStatistics.do'">
+              자전거별 운영 통계
+            </button>
+          </div>
+          <div class="nav_col">
+            공지 관리
+            <button onclick="window.location.href='/gijangBicycleRental/notice.do'">
+              공지 관리
+            </button>
+          </div>
+          <div class="nav_col">
+            운영 관리
+            <button onclick="window.location.href='/gijangBicycleRental/operation/bicycleMgmt.do'">
+              자전거 관리
+            </button>
+            <button onclick="window.location.href='/gijangBicycleRental/operation/stationMgmt.do'">
+              대여소 관리
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </main>

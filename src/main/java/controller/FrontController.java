@@ -51,7 +51,6 @@ public class FrontController extends HttpServlet {
         list.put("/user/registMgmt/regist.do", new UserRegistController());
         list.put("/user/registMgmt/minorsRegist.do", new UserMinorsRegistController());
         list.put("/user/userInfo.do", new UserInfoController());
-
     }
 
 

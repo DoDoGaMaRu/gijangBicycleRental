@@ -13,7 +13,7 @@
 <header>
     <div class="container">
         <div class="ban">
-            <div class="ban_logo">
+            <div class="ban_logo" onclick="window.location.href='/gijangBicycleRental/main.do'" style="cursor: pointer;">
                 공용자전거 무인대여시스템
             </div>
             <div class="ban_login">

@@ -72,7 +72,7 @@
                 </table>
                 <div class="cont_bottom">
 
-                    <div class="back_btn" style='cursor:hand' onclick="location.href='../bicycleMgmt.do'">
+                    <div class="back_btn" style='cursor:hand' onclick="history.back();">
                         뒤로
                     </div>
                     <div class="udpate_btn" onclick="">수정</div>

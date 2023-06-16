@@ -8,6 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <body>
     <footer>
-        <div class="container">is footer</div>
+        <div class="container"></div>
     </footer>
 </body>

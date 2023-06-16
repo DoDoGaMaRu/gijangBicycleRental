@@ -53,7 +53,7 @@
                             <td></td>
 
                             <td class="btn_wrap" >
-                                <input class="table_btn" type="button" onclick="location.href='../bicycleMgmt.do'" value="취소" />
+                                <input class="table_btn" type="button" onclick="history.back();" value="취소" />
                                 <input class="table_btn" type="submit" value="확인" />
                             </td>
                         </tr>

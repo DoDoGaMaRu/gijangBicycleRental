@@ -45,7 +45,6 @@
                             out.print("<td>"+ (r==null ? "현재 대여상태 아님" : r.getStartTime()) +"</td>");
                         %>
                 </tr>
-
             </table>
         </div>
     </div>
