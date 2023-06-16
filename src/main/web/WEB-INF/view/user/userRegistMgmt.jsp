@@ -22,7 +22,7 @@
     <div class="container">
         <div class="cont_box">
             <div class="centered_links">
-                <a href="http://localhost:8080/gijangBicycleRental/user.do">
+                <a onclick="window.location.href='/gijangBicycleRental/main.do'" style="cursor: pointer;">
                     <span class="row_name">뒤로 가기</span>
                 </a>
                 <a href="registMgmt/regist.do">

@@ -39,7 +39,6 @@
                 <button type="submit">자전거 대여하기</button>
 
             </form>
-
         </div>
     </div>
 </main>

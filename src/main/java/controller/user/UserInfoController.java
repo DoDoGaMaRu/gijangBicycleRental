@@ -20,9 +20,9 @@ public class UserInfoController implements Controller {
 
         if (idParam != null && !idParam.isEmpty()) {
             serial = Long.valueOf(idParam);
+            req.setAttribute("user", userDAO.findByKey(serial));
         }
 
-        req.setAttribute("user", userDAO.findByKey(serial));
         HttpUtil.forward(req, res, "/WEB-INF/view/user/userInfo.jsp");
         // Todo 시리얼 입력 받고 해당하는 회원 정보 출력 하도록 바꿨음 확인 부탁
     }

@@ -66,7 +66,7 @@
                                 for (int j = 0; j < rentals.size(); j++){
                                     r = rentals.get(j);
                                     if (b.getId() == r.getBicycle().getId()) {
-                                        totalDistance += r.getDistance();
+                                        totalDistance += (r.getDistance() != null) ? r.getDistance():0;
                                     }
                                 }
                                 out.print("<td>"+ totalDistance +" km</td>");

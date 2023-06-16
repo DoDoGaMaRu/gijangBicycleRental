@@ -94,7 +94,7 @@
                     <div class="regist_btn" style='cursor:hand' onclick="location.href='bicycleMgmt/regist.do'">
                         등록
                     </div>
-                    <div class="back_btn" style='cursor:hand' onclick="location.href='../operation.do'">
+                    <div class="back_btn" style='cursor:hand' onclick="window.location.href='/gijangBicycleRental/main.do'">
                         뒤로
                     </div>
                 </div>

@@ -30,7 +30,7 @@
                     <label for="serial">회원 시리얼:</label>
                     <input type="text" id="serial" name="serial">
                     <button type="submit">조회</button>
-                    <button type="button" onclick="window.location.href='http://localhost:8080/gijangBicycleRental/user.do';">뒤로가기</button>
+                    <button type="button" onclick="window.location.href='/gijangBicycleRental/main.do'">뒤로가기</button>
                 </form>
                 <table class="info_table">
                     <% if (user != null) { %>

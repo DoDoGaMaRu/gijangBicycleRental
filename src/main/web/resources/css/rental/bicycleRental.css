@@ -2,7 +2,7 @@
 
 .cont_box {display: flex;justify-content: center;align-items: center;height: 100%;}
 
-.cont_box h1 {text-align: center; font-size: 24px;font-family: SCDream3;}
+.cont_box h1 {text-align: center; font-size: 24px; font-family: SCDream3;}
 .cont_box input {margin-top: 15px; padding: 2px; width: 200px; height: 30px; font-family: SCDream3; font-size: 22px;}
 .cont_box button {width: 200px; height: 28px; margin-top: 17px; font-size: 15px; font-family: SCDream3;}
 
