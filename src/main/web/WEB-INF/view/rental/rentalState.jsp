@@ -13,7 +13,7 @@
 <%
     request.setCharacterEncoding("UTF-8");
     String title = "대여 현황 조회";
-    Rental rental = (Rental) request.getAttribute("rental");
+    Rental r = (Rental) request.getAttribute("rental");
 %>
 
 <html>
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="${resources_path}/css/reset.css">
     <link rel="stylesheet" href="${resources_path}/css/common.css">
     <link rel="stylesheet" href="${resources_path}/css/rental/rentalState.css">
+    <script defer type="text/javascript" src="${resources_path}/js/minors.js"></script>
 </head>
 <body>
 <jsp:include page="${view_path}/fragment/header.jsp" flush="true">
@@ -31,19 +32,27 @@
     <div class="container">
         <div class="cont_box">
 
+            <form class="state_form" action="state.do" method="post">
+
+                <h1>사용자 시리얼 입력</h1>
+                <input type="text" name="serial" required="required"><br>
+
+                <button type="submit">조회</button>
+
+            </form>
+
             <table class="bicycle_State">
                 <tr class="state">
                     <td>대여 상태</td>
-                        <%
-                            Rental r = null;
-                            out.print("<td>"+ (r==null ? "현재 대여상태 아님" : r.getBicycle().getState()) +"</td>");
-                        %>
+                    <%
+                        out.print("<td>"+ (r != null ? "대여 중" : "현재 대여상태 아님") +"</td>");
+                    %>
                 </tr>
                 <tr class="time">
                     <td>대여 일시</td>
-                        <%
-                            out.print("<td>"+ (r==null ? "현재 대여상태 아님" : r.getStartTime()) +"</td>");
-                        %>
+                    <%
+                        out.print("<td>"+ (r != null ? r.getStartTime().toLocalTime() : "현재 대여상태 아님") +"</td>");
+                    %>
                 </tr>
             </table>
         </div>
