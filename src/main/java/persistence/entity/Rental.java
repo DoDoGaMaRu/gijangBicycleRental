@@ -19,6 +19,9 @@ public class Rental {
     @ManyToOne
     @JoinColumn(name = "bicycle_id")
     private Bicycle bicycle;
+    @ManyToOne
+    @JoinColumn(name = "user_serial")
+    private User user;
 
     public void updateRental(LocalDateTime endTime, Double distance) {
         this.endTime = endTime;
